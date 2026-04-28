@@ -1,22 +1,182 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Reviews</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Customer Reviews – Servixa Home</title>
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .rating-summary { background: var(--navy); border-radius: var(--radius-lg); padding: 40px; text-align: center; color: white; max-width: 420px; margin: 0 auto 60px; }
+    .rating-big { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 800; color: var(--gold); line-height: 1; }
+    .rating-stars-big { font-size: 2rem; color: var(--gold); letter-spacing: 4px; margin: 8px 0; }
+    .rating-count { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
+    .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
+    .filter-btn { padding: 8px 20px; border-radius: 50px; border: 1.5px solid rgba(15,45,92,0.15); background: transparent; color: var(--text-mid); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
+    .filter-btn.active, .filter-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
+    .google-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(15,45,92,0.1); padding: 8px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 40px; }
+  </style>
 </head>
-
 <body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="Logo.png" alt="Servixa Home Logo" />
+      <div class="nav-logo-text"><span class="brand">SERVI<span>XA</span> HOME</span><span class="tagline">सेवा • सुरक्षा • समृद्धि</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html" class="active">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-<header>
-<h2>Customer Reviews</h2>
-</header>
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Reviews</span></div>
+  <h1>Customer <span>Reviews</span></h1>
+  <p>What our customers say about Servixa Home — straight from their experience.</p>
+</div>
 
 <section class="section">
+  <div class="section-inner">
+    <div style="text-align:center;">
+      <div class="rating-summary animate-on-scroll">
+        <div class="rating-big">4.9</div>
+        <div class="rating-stars-big">★★★★★</div>
+        <div style="font-weight:600;color:white;font-size:1rem;margin-bottom:4px;">Excellent Service</div>
+        <div class="rating-count">Based on 150+ verified reviews</div>
+      </div>
+      <div class="google-badge">
+        <span>🔍</span> Verified Google Reviews
+      </div>
+    </div>
 
-<p>⭐⭐⭐⭐⭐ Excellent Service</p>
-<p>⭐⭐⭐⭐ Fast Response</p>
+    <div class="filter-bar" style="justify-content:center;">
+      <button class="filter-btn active" onclick="filterReviews('all', this)">All Reviews</button>
+      <button class="filter-btn" onclick="filterReviews('ac', this)">AC Service</button>
+      <button class="filter-btn" onclick="filterReviews('wm', this)">Washing Machine</button>
+      <button class="filter-btn" onclick="filterReviews('installation', this)">Installation</button>
+    </div>
 
+    <div class="reviews-grid" id="reviewsGrid">
+      <div class="review-card animate-on-scroll" data-category="ac">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My AC was not cooling at all. The technician came within 2 hours, did gas refilling and now it's ice cold! Very happy with the service. Will definitely call again."</p>
+        <div class="review-author">
+          <div class="review-avatar">RS</div>
+          <div><div class="review-name">Ravi Sharma</div><div class="review-location">📍 Kharghar • AC Gas Refilling</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="wm">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Washing machine was giving F21 error and not draining. They fixed it same day, explained what was wrong, and charged a fair price. Excellent experience!"</p>
+        <div class="review-author">
+          <div class="review-avatar">PM</div>
+          <div><div class="review-name">Priya Mehta</div><div class="review-location">📍 Vashi • Washing Machine Repair</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="ac">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Got AC deep cleaning done. The difference in cooling is amazing! The technician was very professional, wore shoe covers, and kept everything clean. 5 stars!"</p>
+        <div class="review-author">
+          <div class="review-avatar">AJ</div>
+          <div><div class="review-name">Amit Joshi</div><div class="review-location">📍 Nerul • AC Deep Cleaning</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="installation">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"New AC installation was done perfectly. They drilled neatly, hid the pipes well, and tested everything before leaving. Best installation service in Navi Mumbai!"</p>
+        <div class="review-author">
+          <div class="review-avatar">SK</div>
+          <div><div class="review-name">Sunita Kulkarni</div><div class="review-location">📍 Belapur • AC Installation</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="wm">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My front load LG washing machine drum was making noise. Servixa technician diagnosed it quickly — drum bearing issue. Fixed it in 2 hours. Superb service!"</p>
+        <div class="review-author">
+          <div class="review-avatar">VD</div>
+          <div><div class="review-name">Vijay Deshmukh</div><div class="review-location">📍 Airoli • Washing Machine Repair</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="ac">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"AC remote was not working and AC would not start. They checked everything, replaced the PCB board, and now it's working fine. Warranty given. Very trustworthy team!"</p>
+        <div class="review-author">
+          <div class="review-avatar">NP</div>
+          <div><div class="review-name">Nisha Patil</div><div class="review-location">📍 Panvel • AC Repair</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="wm">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Semi-automatic washing machine was not spinning. Called Servixa in the morning, technician came by noon, fixed the motor coupling, and charged very reasonably. Highly recommended!"</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div><div class="review-name">Mangesh Rao</div><div class="review-location">📍 Seawoods • WM Repair</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="installation">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Washing machine installation was done very neatly. They set up the inlet hose, drain pipe, and tested multiple cycles. Really professional team!"</p>
+        <div class="review-author">
+          <div class="review-avatar">SD</div>
+          <div><div class="review-name">Sonal Dave</div><div class="review-location">📍 Ghansoli • WM Installation</div></div>
+        </div>
+      </div>
+
+      <div class="review-card animate-on-scroll" data-category="ac">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"I called at 8 AM for AC repair, technician came by 11 AM. Unbelievably fast! Fixed the problem, gave 30 day warranty. I've already referred them to 3 friends."</p>
+        <div class="review-author">
+          <div class="review-avatar">RK</div>
+          <div><div class="review-name">Rohit Kadam</div><div class="review-location">📍 Kopar Khairane • AC Repair</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;margin-top:48px;">
+      <a href="booking.html" class="btn-primary">📅 Book Your Service Today →</a>
+    </div>
+  </div>
 </section>
 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="Logo.png" alt="Servixa Home" /><p>Navi Mumbai's trusted appliance repair service.</p><p class="hindi-footer">सेवा • सुरक्षा • समृद्धि</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="washing-machine.html">WM Repair</a></li><li><a href="services.html">All Services</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919876543210">📞 +91 98765 43210</a></li><li><a href="https://wa.me/919876543210">💬 WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Servixa Home. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">💬</a>
+<script src="script.js"></script>
+<script>
+function filterReviews(category, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('#reviewsGrid .review-card').forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
 </body>
 </html>
