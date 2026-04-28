@@ -1,169 +1,309 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Servixa Home | Best Home Services in Navi Mumbai | AC, Plumbing & More</title>
-    <meta name="description" content="Servixa Home provides professional AC repair, washing machine service, plumbing, and electrical works in Kopar Khairane & Navi Mumbai. One Call Solution for all home needs.">
-    <meta name="keywords" content="AC Repair Navi Mumbai, Home Services Kopar Khairane, Washing Machine Repair, Plumber in Navi Mumbai, Servixa Home">
-    <meta name="author" content="Servixa Home">
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Servixa Home – AC & Washing Machine Repair in Navi Mumbai</title>
+  <meta name="description" content="Professional AC and Washing Machine repair service in Navi Mumbai. Same day service, expert technicians, affordable rates. Call now!" />
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-    <header>
-        <div class="container nav-flex">
-            <a href="index.html" class="logo-box">
-                <img src="Logo.png" alt="Servixa Home Logo - Best Home Services">
-                <div class="brand-name">SERVIX<span class="wrench-x"><i class="fas fa-wrench"></i></span>A <span style="font-size: 14px; display: block; border-top: 2px solid var(--primary); letter-spacing: 4px;">HOME</span></div>
-            </a>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="ac-repair.html">AC Repair</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-cta">
-                <a href="tel:8779694303" class="btn-gold"><i class="fas fa-phone-alt"></i> 8779694303</a>
-            </div>
-        </div>
-    </header>
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="Logo.png" alt="Servixa Home Logo" />
+      <div class="nav-logo-text">
+        <span class="brand">SERVI<span>XA</span> HOME</span>
+        <span class="tagline">सेवा • सुरक्षा • समृद्धि</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
 
-    <section class="hero">
-        <div class="container hero-wrapper">
-            <div class="hero-content">
-                <h1 class="hero-title">ONE CALL SOLUTION FOR <br><span>ALL HOME SERVICES</span></h1>
-                <p>Ab har ghar ki samasya hogi khatam! Servixa Home laya hai expert technicians aapke doorstep par Navi Mumbai mein.</p>
-                <div class="hero-btns">
-                    <a href="tel:8779694303" class="btn-gold large">Instant Booking</a>
-                    <a href="https://wa.me/918779694303" class="btn-outline">WhatsApp Now</a>
-                </div>
-            </div>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg-pattern"></div>
+  <div class="hero-bg-grid"></div>
+  <div class="hero-container">
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="dot"></span>
+        Navi Mumbai's Trusted Repair Service
+      </div>
+      <h1 class="hero-title">
+        Expert AC &
+        <span>Washing Machine</span>
+        Repair at Your Door
+      </h1>
+      <p class="hero-subtitle">
+        Fast, reliable, and affordable home appliance repair in Navi Mumbai. Certified technicians, genuine spare parts, and same-day service you can count on.
+      </p>
+      <p class="hero-tagline-hindi">सेवा • सुरक्षा • समृद्धि</p>
+      <div class="hero-buttons">
+        <a href="booking.html" class="btn-primary">📅 Book a Service</a>
+        <a href="tel:+919876543210" class="btn-secondary">📞 Call Now</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number counter" data-target="500" data-suffix="+">0+</div>
+          <div class="stat-label">Happy Customers</div>
         </div>
-    </section>
-
-    <section class="trust-bar">
-        <div class="container stats-flex">
-            <div class="stat-item"><i class="fas fa-check-circle"></i> 100% Satisfaction</div>
-            <div class="stat-item"><i class="fas fa-user-shield"></i> Verified Experts</div>
-            <div class="stat-item"><i class="fas fa-tools"></i> Genuine Spare Parts</div>
-            <div class="stat-item"><i class="fas fa-clock"></i> 60 Min Arrival</div>
+        <div class="stat-item">
+          <div class="stat-number counter" data-target="5" data-suffix="+">0+</div>
+          <div class="stat-label">Years Experience</div>
         </div>
-    </section>
-
-    <section id="services" class="section-padding">
-        <div class="container">
-            <div class="section-head">
-                <span class="sub-title">Expert Solutions</span>
-                <h2>Our Professional Services</h2>
-                <div class="line"></div>
-            </div>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-snowflake"></i></div>
-                    <h3>AC Repair & Service</h3>
-                    <p>Split & Window AC installation, gas charging, and deep filter cleaning.</p>
-                    <a href="ac-repair.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-sync-alt"></i></div>
-                    <h3>Washing Machine</h3>
-                    <p>Expert repair for Top load, Front load & Semi-automatic machines.</p>
-                    <a href="washing-machine.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-hammer"></i></div>
-                    <h3>Carpenter Service</h3>
-                    <p>Furniture repair, modular kitchen setup, and door lock installations.</p>
-                    <a href="carpenter.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-faucet"></i></div>
-                    <h3>Plumbing Work</h3>
-                    <p>Fixing leakages, new tap fittings, and water tank cleaning services.</p>
-                    <a href="plumbing.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-bolt"></i></div>
-                    <h3>Electrician</h3>
-                    <p>Complete house wiring, short circuit fixes, and appliance setup.</p>
-                    <a href="electrician.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-                <div class="service-card">
-                    <div class="s-icon"><i class="fas fa-microchip"></i></div>
-                    <h3>Other Appliances</h3>
-                    <p>Micro-oven, Refrigerator, and Geyser repair at best prices.</p>
-                    <a href="services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
-                </div>
-            </div>
+        <div class="stat-item">
+          <div class="stat-number counter" data-target="98" data-suffix="%">0%</div>
+          <div class="stat-label">Satisfaction Rate</div>
         </div>
-    </section>
-
-    <section class="about-detail section-padding">
-        <div class="container flex-about">
-            <div class="about-text">
-                <h2>Servixa Home - Your Trusted Partner in Navi Mumbai</h2>
-                <p>Kya aap Navi Mumbai mein ek bharosemand technician dhund rahe hain? Servixa Home aapki sabhi home maintenance problems ka ek akela solution hai. Hum Kopar Khairane, Vashi, Ghansoli, aur Airoli jaise sabhi areas mein apni services dete hain.</p>
-                <p>Hamare technicians background-checked hain aur 100% genuine parts ka istemal karte hain taaki aapka machine chale saalo saal.</p>
-                <ul class="check-list">
-                    <li><i class="fas fa-check"></i> 30 Days Service Warranty</li>
-                    <li><i class="fas fa-check"></i> Affordable & Transparent Pricing</li>
-                    <li><i class="fas fa-check"></i> 24/7 Customer Support</li>
-                </ul>
-            </div>
-            <div class="about-image">
-                <img src="Logo.png" alt="Servixa Home Service Expertise" class="floating">
-            </div>
+        <div class="stat-item">
+          <div class="stat-number">24/7</div>
+          <div class="stat-label">Support</div>
         </div>
-    </section>
-
-    <section class="faq-section section-padding">
-        <div class="container">
-            <h2 class="text-center">Frequently Asked Questions</h2>
-            <div class="faq-grid">
-                <div class="faq-item">
-                    <h4>Q: Servixa Home ki services Navi Mumbai mein kahan kahan hain?</h4>
-                    <p>A: Hum Kopar Khairane, Vashi, Ghansoli, Sanpada aur poore Navi Mumbai mein service dete hain.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>Q: Kya aap repair ke baad guarantee dete hain?</h4>
-                    <p>A: Haan, hum har repair par 30-day ki service warranty dete hain.</p>
-                </div>
-            </div>
+      </div>
+    </div>
+    <div class="hero-image-side">
+      <div class="hero-card">
+        <div class="hero-card-icon">❄️</div>
+        <h3>AC Repair & Service</h3>
+        <p>Gas refilling, cleaning, installation, and all AC brands covered.</p>
+      </div>
+      <div class="hero-card-row">
+        <div class="hero-card">
+          <div class="hero-card-icon">🫧</div>
+          <h3>Washing Machine</h3>
+          <p>All types — front load, top load, semi-automatic.</p>
         </div>
-    </section>
-
-    <footer>
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="brand-name white">SERVIX<span>X</span>A HOME</div>
-                    <p>One Call Solution for All Home Services.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Location</h4>
-                    <p>Kopar Khairane, Navi Mumbai, Maharashtra</p>
-                    <p>Email: support@servixahome.online</p>
-                </div>
-            </div>
-            <div class="tagline-hindi">सेवा • सुरक्षा • समृद्धि</div>
-            <p class="copy-text">&copy; 2026 Servixa Home. All Rights Reserved. | <a href="sitemap.xml" style="color:var(--accent);">Sitemap</a></p>
+        <div class="hero-card">
+          <div class="hero-card-icon">⚡</div>
+          <h3>Same Day</h3>
+          <p>Book before noon — get service today.</p>
         </div>
-    </footer>
+      </div>
+      <div class="hero-card">
+        <div class="hero-card-icon">🛡️</div>
+        <h3>Service Warranty</h3>
+        <p>All repairs come with a 30-day service guarantee for your peace of mind.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <script src="script.js"></script>
+<!-- SERVICES PREVIEW -->
+<section class="section">
+  <div class="section-inner">
+    <div class="section-header center">
+      <span class="section-tag">Our Services</span>
+      <h2 class="section-title">What We <span>Repair & Fix</span></h2>
+      <p class="section-subtitle">From routine maintenance to complex repairs — we handle it all with expert care and genuine parts.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">❄️</div>
+        <h3>AC Repair & Service</h3>
+        <p>Gas refilling, coil cleaning, motor replacement, remote issues, and full AC servicing for all brands — Voltas, Daikin, LG, Samsung, Carrier.</p>
+        <a href="ac-repair.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">🫧</div>
+        <h3>Washing Machine Repair</h3>
+        <p>Front load, top load, semi-automatic — PCB issues, drum problems, drainage faults, motor failures, and all brand repairs.</p>
+        <a href="washing-machine.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">🔧</div>
+        <h3>Installation & Setup</h3>
+        <p>Professional installation of AC units and washing machines with proper testing and setup guidance.</p>
+        <a href="services.html" class="service-link">Learn More →</a>
+      </div>
+      <div class="service-card animate-on-scroll">
+        <div class="service-icon">🧰</div>
+        <h3>Annual Maintenance</h3>
+        <p>Annual maintenance contracts (AMC) for hassle-free upkeep of your appliances all year round.</p>
+        <a href="services.html" class="service-link">Learn More →</a>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:48px;">
+      <a href="services.html" class="btn-primary">View All Services →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="section why-us">
+  <div class="section-inner">
+    <div class="section-header center">
+      <span class="section-tag" style="background:rgba(245,166,35,0.15);color:var(--gold);">Why Choose Us</span>
+      <h2 class="section-title" style="color:white;">Trusted by <span style="color:var(--gold);">Hundreds</span> in Navi Mumbai</h2>
+      <p class="section-subtitle" style="color:rgba(255,255,255,0.55);">We don't just fix appliances — we build trust, one service at a time.</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">🏅</div>
+        <h3>Certified Technicians</h3>
+        <p>Trained and certified professionals for every brand and model.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">⚡</div>
+        <h3>Same Day Service</h3>
+        <p>Book before noon and get your appliance repaired the same day.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">💰</div>
+        <h3>Transparent Pricing</h3>
+        <p>No hidden charges. Get a quote before we start work.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">🛡️</div>
+        <h3>30-Day Warranty</h3>
+        <p>Every repair backed by a 30-day service guarantee.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">🔩</div>
+        <h3>Genuine Parts</h3>
+        <p>We only use original or OEM-quality spare parts for all repairs.</p>
+      </div>
+      <div class="feature-item animate-on-scroll">
+        <div class="feature-icon">📞</div>
+        <h3>24/7 Support</h3>
+        <p>Customer support available round the clock via call or WhatsApp.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS PREVIEW -->
+<section class="section bg-light">
+  <div class="section-inner">
+    <div class="section-header center">
+      <span class="section-tag">Customer Reviews</span>
+      <h2 class="section-title">What Our <span>Customers Say</span></h2>
+      <p class="section-subtitle">Real feedback from real customers across Navi Mumbai.</p>
+    </div>
+    <div class="reviews-grid">
+      <div class="review-card animate-on-scroll">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"My AC was not cooling properly for weeks. Servixa Home technician came the same day, did gas refilling, and now it's working perfectly. Very professional service!"</p>
+        <div class="review-author">
+          <div class="review-avatar">RS</div>
+          <div>
+            <div class="review-name">Ravi Sharma</div>
+            <div class="review-location">📍 Kharghar, Navi Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card animate-on-scroll">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Washing machine was giving error and not spinning. Called Servixa, they came in 2 hours and fixed it. Price was very reasonable. Highly recommend!"</p>
+        <div class="review-author">
+          <div class="review-avatar">PM</div>
+          <div>
+            <div class="review-name">Priya Mehta</div>
+            <div class="review-location">📍 Vashi, Navi Mumbai</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card animate-on-scroll">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Excellent service! The technician explained everything before starting the repair. No hidden charges, great warranty. Will definitely call again."</p>
+        <div class="review-author">
+          <div class="review-avatar">AJ</div>
+          <div>
+            <div class="review-name">Amit Joshi</div>
+            <div class="review-location">📍 Nerul, Navi Mumbai</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="reviews.html" class="btn-primary">Read More Reviews →</a>
+    </div>
+  </div>
+</section>
+
+<!-- QUICK BOOKING CTA -->
+<section style="background: linear-gradient(135deg, var(--gold-dark), var(--gold)); padding: 80px 24px; text-align:center;">
+  <div style="max-width:700px;margin:0 auto;">
+    <h2 style="font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:800;color:var(--navy-dark);margin-bottom:16px;">
+      Ready to Fix Your Appliance?
+    </h2>
+    <p style="color:rgba(7,26,56,0.7);margin-bottom:32px;font-size:1.05rem;line-height:1.6;">
+      Don't let a broken appliance ruin your day. Book now and get expert repair at your doorstep — same day!
+    </p>
+    <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+      <a href="booking.html" style="background:var(--navy-dark);color:white;padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">📅 Book Online</a>
+      <a href="https://wa.me/919876543210" target="_blank" style="background:white;color:var(--navy-dark);padding:14px 32px;border-radius:12px;text-decoration:none;font-weight:700;font-size:1rem;display:inline-flex;align-items:center;gap:8px;transition:all 0.3s;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform=''">💬 WhatsApp Us</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="Logo.png" alt="Servixa Home" />
+        <p>Navi Mumbai's most trusted AC and Washing Machine repair service. Fast, reliable, and affordable — at your doorstep.</p>
+        <p class="hindi-footer">सेवा • सुरक्षा • समृद्धि</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="#" class="social-link" aria-label="WhatsApp">💬</a>
+          <a href="#" class="social-link" aria-label="Instagram">📸</a>
+          <a href="#" class="social-link" aria-label="Facebook">👍</a>
+          <a href="#" class="social-link" aria-label="Google">🔍</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="ac-repair.html">AC Repair</a></li>
+          <li><a href="washing-machine.html">Washing Machine Repair</a></li>
+          <li><a href="services.html">AC Installation</a></li>
+          <li><a href="services.html">Annual Maintenance</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="reviews.html">Reviews</a></li>
+          <li><a href="booking.html">Book Service</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+919876543210">📞 +91 98765 43210</a></li>
+          <li><a href="https://wa.me/919876543210">💬 WhatsApp</a></li>
+          <li><a href="mailto:info@servixahome.in">✉️ info@servixahome.in</a></li>
+          <li><a href="#">📍 Navi Mumbai</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Servixa Home. All rights reserved.</span>
+      <span>Made with ❤️ in Navi Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">💬</a>
+
+<script src="script.js"></script>
 </body>
-</html>
-
-<a href="index.html" class="logo-box">
-    <img src="Logo.png" alt="Servixa Home Logo">
-    <div class="brand-name">SERVIX<span class="wrench-x"><i class="fas fa-wrench"></i></span>A</div>
-</a>
+                                               </html>
