@@ -1,101 +1,195 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servixa Home – Professional Services in Navi Mumbai</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Rajdhani:wght@400;500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <title>Servixa Home | Premium Home Solutions</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #002e5d; /* Dark Navy */
+            --accent: #ffcc00;  /* Gold/Yellow */
+            --white: #ffffff;
+            --light-bg: #f8fbff;
+            --text: #333333;
+            --glass: rgba(255, 255, 255, 0.95);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--light-bg); overflow-x: hidden; }
+
+        /* --- PRELOADER --- */
+        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary); z-index: 9999; display: flex; justify-content: center; align-items: center; }
+        .loader { width: 50px; height: 50px; border: 5px solid var(--white); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s infinite linear; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* --- NAVIGATION --- */
+        .navbar { position: fixed; top: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; transition: 0.5s; background: transparent; }
+        .navbar.sticky { background: var(--glass); height: 70px; shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
+        .container { max-width: 1300px; margin: 0 auto; padding: 0 25px; width: 100%; }
+        .flex-nav { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 12px; }
+        .logo img { height: 55px; filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.2)); }
+        .logo-text { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); }
+        .sticky .logo-text { color: var(--primary); }
+        .nav-links { display: flex; gap: 35px; list-style: none; }
+        .nav-links a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .sticky .nav-links a { color: var(--primary); }
+        .nav-links a:hover { color: var(--accent) !important; }
+
+        /* --- HERO SECTION --- */
+        .hero { height: 100vh; background: linear-gradient(rgba(0,46,93,0.8), rgba(0,46,93,0.5)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6954?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; color: var(--white); position: relative; }
+        .hero-content { max-width: 800px; }
+        .hero h1 { font-size: clamp(40px, 8vw, 75px); font-family: 'Playfair Display', serif; line-height: 1.1; margin-bottom: 20px; }
+        .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; border-left: 4px solid var(--accent); padding-left: 20px; }
+        .btn-group { display: flex; gap: 20px; }
+        .btn { padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.5s; font-size: 14px; letter-spacing: 1px; }
+        .btn-gold { background: var(--accent); color: var(--primary); border: 2px solid var(--accent); }
+        .btn-white { border: 2px solid var(--white); color: var(--white); }
+        .btn:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
+
+        /* --- SERVICES GRID --- */
+        .services { padding: 120px 0; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 45px; color: var(--primary); }
+        .underline { width: 80px; height: 5px; background: var(--accent); margin: 20px auto; border-radius: 10px; }
+        
+        .services-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+        .s-card { background: var(--light-bg); padding: 50px 30px; border-radius: 30px; text-align: center; transition: 0.5s; position: relative; overflow: hidden; border: 1px solid #eee; }
+        .s-card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
+        .s-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--primary); }
+        .s-card:hover { background: var(--primary); transform: scale(1.05); }
+        .s-card:hover h3, .s-card:hover p, .s-card:hover i { color: var(--white); }
+        .s-card:hover i { color: var(--accent); }
+
+        /* --- CONTACT SECTION --- */
+        .contact-strip { background: var(--primary); padding: 80px 0; color: var(--white); }
+        .contact-grid { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 40px; }
+        .c-item i { font-size: 35px; color: var(--accent); margin-bottom: 15px; }
+
+        /* --- FOOTER --- */
+        footer { padding: 50px 0; background: #001a35; color: rgba(255,255,255,0.6); text-align: center; }
+        .footer-logo { font-size: 30px; color: var(--white); margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .hero h1 { font-size: 45px; }
+        }
+    </style>
 </head>
 <body>
 
-    <div id="ganesh-intro">
-        <div class="intro-aura"></div>
-        <div class="intro-content">
-            <div class="om-symbol">ॐ</div>
-            <div class="shlok">वक्रतुण्ड महाकाय सूर्यकोटि समप्रभ।</div>
-            <div class="mantra">॥ श्री गणेशाय नमः ॥</div>
+    <div id="preloader"><div class="loader"></div></div>
+
+    <nav class="navbar">
+        <div class="container flex-nav">
+            <div class="logo">
+                <img src="logo.png" alt="Servixa">
+                <div class="logo-text">Servixa Home</div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="tel:8779694303">Support</a></li>
+            </ul>
         </div>
-    </div>
+    </nav>
 
-    <div id="main-site">
-        <header class="navbar" id="main-nav">
-            <div class="container flex-nav">
-                <a href="#" class="logo-area">
-                    <img src="Logo.png" alt="Servixa Logo">
-                    <div class="brand">
-                        <span class="m-title">SERVIXA</span>
-                        <span class="s-title">HOME SERVICES</span>
-                    </div>
-                </a>
-                <ul class="nav-menu">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#contact" class="cta-nav">Get Expert Now</a></li>
-                </ul>
-            </div>
-        </header>
-
-        <main>
-            <section id="home" class="hero-section">
-                <div class="hero-overlay"></div>
-                <div class="container grid-2">
-                    <div class="hero-text-block">
-                        <span class="badge">Professional • Reliable • Quick</span>
-                        <h1>Navi Mumbai's Most <span class="gold-gradient">Trusted</span> Service Expert</h1>
-                        <p>Specialized repair and maintenance for AC, Washing Machines, and more. Quality guaranteed at your doorstep.</p>
-                        <div class="hero-actions">
-                            <a href="tel:+918779694303" class="btn-main">📞 Call 8779694303</a>
-                            <a href="https://wa.me/918779694303" class="btn-wa">WhatsApp Now</a>
-                        </div>
-                    </div>
-                    <div class="hero-image-block">
-                        <div class="floating-logo">
-                            <img src="Logo.png" alt="Servixa Branding">
-                        </div>
-                    </div>
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content" data-aos="fade-right">
+                <h1>The One Call <span>Solution</span> For Your Home</h1>
+                <p>Providing Premium AC Repair, Plumbing, Electrician, and Maintenance Services in Kopar Khairane, Navi Mumbai.</p>
+                <div class="btn-group">
+                    <a href="tel:8779694303" class="btn btn-gold">Call Now</a>
+                    <a href="https://wa.me/918779694303" class="btn btn-white">WhatsApp</a>
                 </div>
-            </section>
-
-            <section id="services" class="services-section">
-                <div class="container">
-                    <h2 class="section-title">Hamari <span class="gold-text">Services</span></h2>
-                    <div class="services-wrapper">
-                        <div class="s-card">
-                            <div class="s-icon">❄️</div>
-                            <h3>AC Service</h3>
-                            <p>Installation, Gas Refilling, and Complete Repairing.</p>
-                        </div>
-                        <div class="s-card">
-                            <div class="s-icon">🧺</div>
-                            <h3>Washing Machine</h3>
-                            <p>Front Load & Top Load specialized technician.</p>
-                        </div>
-                        <div class="s-card">
-                            <div class="s-icon">🔧</div>
-                            <h3>Plumbing</h3>
-                            <p>All types of leakage and bathroom fittings.</p>
-                        </div>
-                        <div class="s-card">
-                            <div class="s-icon">🪚</div>
-                            <h3>Carpenter</h3>
-                            <p>Modern furniture repair and custom woodwork.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <footer class="footer">
-            <div class="container">
-                <p>&copy; 2026 Servixa Home. Designed for Excellence.</p>
-                <p>📍 Navi Mumbai | ✉️ home.servixa@gmail.com</p>
             </div>
-        </footer>
-    </div>
+        </div>
+    </section>
 
-    <script src="script.js"></script>
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Premium Services</h2>
+                <div class="underline"></div>
+            </div>
+            <div class="services-wrapper">
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-snowflake"></i>
+                    <h3>AC Repair</h3>
+                    <p>Advanced cooling maintenance and rapid repair services.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-soap"></i>
+                    <h3>Washing Machine</h3>
+                    <p>Expert care for your laundry appliances with genuine parts.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-tools"></i>
+                    <h3>Carpenter</h3>
+                    <p>Bespoke woodwork and furniture restoration by masters.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-faucet"></i>
+                    <h3>Plumbing</h3>
+                    <p>Pristine water solutions and leak-proof installations.</p>
+                </div>
+                <div class="s-card" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Electrician</h3>
+                    <p>Certified electrical services and smart home setups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-strip">
+        <div class="container contact-grid">
+            <div class="c-item" data-aos="fade-up">
+                <i class="fas fa-map-marker-alt"></i>
+                <h4>Location</h4>
+                <p>Kopar Khairane, Navi Mumbai</p>
+            </div>
+            <div class="c-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fas fa-envelope"></i>
+                <h4>Email</h4>
+                <p>support@servixahome.online</p>
+            </div>
+            <div class="c-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fas fa-phone-alt"></i>
+                <h4>Phone</h4>
+                <p>+91 8779694303</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-logo">Servixa Home</div>
+        <p>One Call Solution for All Home Services</p>
+        <p style="margin-top: 20px;">&copy; 2026 Servixa. Professionalism Guaranteed.</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Preloader
+        window.addEventListener('load', () => {
+            document.getElementById('preloader').style.display = 'none';
+        });
+
+        // AOS Animations
+        AOS.init({ duration: 1200, once: false });
+
+        // Sticky Navbar
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            nav.classList.toggle('sticky', window.scrollY > 100);
+        });
+    </script>
 </body>
-                                </html>
-    
+</html>
