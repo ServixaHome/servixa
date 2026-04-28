@@ -3,111 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Servixa Home | Premium Home Solutions</title>
+    <title>Servixa Home | One Call Solution</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Playfair+Display:wght@700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #002e5d; /* Dark Navy */
-            --accent: #ffcc00;  /* Gold/Yellow */
+            --primary: #0046ad; /* Logo Navy Blue */
+            --accent: #f2a900;  /* Logo Gold/Yellow */
+            --dark: #002e5d;
             --white: #ffffff;
-            --light-bg: #f8fbff;
-            --text: #333333;
-            --glass: rgba(255, 255, 255, 0.95);
+            --bg-light: #f4f7fa;
+            --transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: var(--text); background: var(--light-bg); overflow-x: hidden; }
+        * { margin: 0; padding: 0; box-sizing: border-box; outline: none; }
+        body { font-family: 'Poppins', sans-serif; background: var(--bg-light); color: #333; overflow-x: hidden; line-height: 1.6; }
+
+        /* --- Custom Scrollbar --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 5px; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
         /* --- PRELOADER --- */
-        #preloader { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--primary); z-index: 9999; display: flex; justify-content: center; align-items: center; }
-        .loader { width: 50px; height: 50px; border: 5px solid var(--white); border-top-color: var(--accent); border-radius: 50%; animation: spin 1s infinite linear; }
+        #loader { position: fixed; width: 100%; height: 100vh; background: var(--white); z-index: 9999; display: flex; flex-direction: column; justify-content: center; align-items: center; }
+        .spin { width: 60px; height: 60px; border: 5px solid #eee; border-top: 5px solid var(--primary); border-radius: 50%; animation: spin 1s infinite linear; }
         @keyframes spin { to { transform: rotate(360deg); } }
 
         /* --- NAVIGATION --- */
-        .navbar { position: fixed; top: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; transition: 0.5s; background: transparent; }
-        .navbar.sticky { background: var(--glass); height: 70px; shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px); }
-        .container { max-width: 1300px; margin: 0 auto; padding: 0 25px; width: 100%; }
-        .flex-nav { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo img { height: 55px; filter: drop-shadow(2px 2px 5px rgba(0,0,0,0.2)); }
-        .logo-text { font-family: 'Playfair Display', serif; font-size: 28px; font-weight: 700; color: var(--white); }
-        .sticky .logo-text { color: var(--primary); }
-        .nav-links { display: flex; gap: 35px; list-style: none; }
-        .nav-links a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 15px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .sticky .nav-links a { color: var(--primary); }
-        .nav-links a:hover { color: var(--accent) !important; }
+        nav { position: fixed; top: 0; width: 100%; height: 90px; display: flex; align-items: center; z-index: 1000; transition: var(--transition); background: transparent; }
+        nav.scrolled { background: rgba(255, 255, 255, 0.98); height: 75px; shadow: 0 10px 30px rgba(0,0,0,0.1); backdrop-filter: blur(10px); border-bottom: 2px solid var(--accent); }
+        
+        .nav-content { display: flex; justify-content: space-between; align-items: center; width: 100%; }
+        .nav-logo { display: flex; align-items: center; gap: 10px; }
+        .nav-logo img { height: 60px; transition: var(--transition); }
+        .scrolled .nav-logo img { height: 50px; }
+        
+        .brand-name { font-family: 'Montserrat', sans-serif; font-size: 26px; font-weight: 800; color: var(--white); letter-spacing: -1px; text-transform: uppercase; }
+        .scrolled .brand-name { color: var(--primary); }
+        .brand-name span { color: var(--accent); }
+
+        .nav-menu { display: flex; gap: 30px; list-style: none; }
+        .nav-menu a { text-decoration: none; color: var(--white); font-weight: 600; font-size: 14px; text-transform: uppercase; transition: 0.3s; }
+        .scrolled .nav-menu a { color: var(--dark); }
+        .nav-menu a:hover { color: var(--accent) !important; }
 
         /* --- HERO SECTION --- */
-        .hero { height: 100vh; background: linear-gradient(rgba(0,46,93,0.8), rgba(0,46,93,0.5)), url('https://images.unsplash.com/photo-1581578731548-c64695cc6954?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; color: var(--white); position: relative; }
-        .hero-content { max-width: 800px; }
-        .hero h1 { font-size: clamp(40px, 8vw, 75px); font-family: 'Playfair Display', serif; line-height: 1.1; margin-bottom: 20px; }
-        .hero h1 span { color: var(--accent); }
-        .hero p { font-size: 20px; margin-bottom: 40px; opacity: 0.9; border-left: 4px solid var(--accent); padding-left: 20px; }
-        .btn-group { display: flex; gap: 20px; }
-        .btn { padding: 18px 45px; border-radius: 50px; text-decoration: none; font-weight: 700; text-transform: uppercase; transition: 0.5s; font-size: 14px; letter-spacing: 1px; }
-        .btn-gold { background: var(--accent); color: var(--primary); border: 2px solid var(--accent); }
-        .btn-white { border: 2px solid var(--white); color: var(--white); }
-        .btn:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-
-        /* --- SERVICES GRID --- */
-        .services { padding: 120px 0; background: var(--white); }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-family: 'Playfair Display', serif; font-size: 45px; color: var(--primary); }
-        .underline { width: 80px; height: 5px; background: var(--accent); margin: 20px auto; border-radius: 10px; }
+        .hero { height: 100vh; background: linear-gradient(rgba(0, 46, 93, 0.8), rgba(0, 70, 173, 0.6)), url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?q=80&w=2070') center/cover; display: flex; align-items: center; position: relative; overflow: hidden; }
         
-        .services-wrapper { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
-        .s-card { background: var(--light-bg); padding: 50px 30px; border-radius: 30px; text-align: center; transition: 0.5s; position: relative; overflow: hidden; border: 1px solid #eee; }
-        .s-card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
-        .s-card h3 { font-size: 24px; margin-bottom: 15px; color: var(--primary); }
-        .s-card:hover { background: var(--primary); transform: scale(1.05); }
-        .s-card:hover h3, .s-card:hover p, .s-card:hover i { color: var(--white); }
-        .s-card:hover i { color: var(--accent); }
+        .hero-text { color: var(--white); max-width: 850px; position: relative; z-index: 5; }
+        .hero-text h1 { font-family: 'Montserrat', sans-serif; font-size: clamp(45px, 8vw, 85px); font-weight: 800; line-height: 1; margin-bottom: 20px; text-transform: uppercase; letter-spacing: -2px; }
+        .hero-text h1 span { color: var(--accent); }
+        
+        .hero-text p { font-size: 22px; font-weight: 400; margin-bottom: 40px; opacity: 0.95; max-width: 600px; border-left: 5px solid var(--accent); padding-left: 20px; }
+        
+        .hero-btns { display: flex; gap: 20px; flex-wrap: wrap; }
+        .btn { padding: 18px 45px; border-radius: 4px; text-decoration: none; font-weight: 700; text-transform: uppercase; font-size: 14px; letter-spacing: 1px; transition: var(--transition); display: inline-flex; align-items: center; gap: 10px; }
+        .btn-accent { background: var(--accent); color: var(--dark); border: 2px solid var(--accent); }
+        .btn-outline { border: 2px solid var(--white); color: var(--white); }
+        .btn:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.3); }
 
-        /* --- CONTACT SECTION --- */
-        .contact-strip { background: var(--primary); padding: 80px 0; color: var(--white); }
-        .contact-grid { display: flex; justify-content: space-around; flex-wrap: wrap; text-align: center; gap: 40px; }
-        .c-item i { font-size: 35px; color: var(--accent); margin-bottom: 15px; }
+        /* --- SERVICES SECTION --- */
+        .services { padding: 120px 0; background: var(--white); position: relative; }
+        .section-tag { color: var(--primary); font-weight: 800; text-transform: uppercase; letter-spacing: 3px; display: block; text-align: center; margin-bottom: 10px; font-size: 14px; }
+        .section-title { font-family: 'Montserrat', sans-serif; font-size: 42px; font-weight: 800; text-align: center; color: var(--dark); margin-bottom: 60px; text-transform: uppercase; }
+        .section-title::after { content: ''; display: block; width: 80px; height: 5px; background: var(--accent); margin: 15px auto; }
+
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .service-card { background: var(--bg-light); padding: 50px 40px; border-radius: 5px; position: relative; transition: var(--transition); border-bottom: 4px solid transparent; overflow: hidden; }
+        .service-card i { font-size: 50px; color: var(--primary); margin-bottom: 25px; transition: 0.5s; }
+        .service-card h3 { font-family: 'Montserrat', sans-serif; font-size: 24px; color: var(--dark); margin-bottom: 15px; text-transform: uppercase; }
+        .service-card p { color: #666; font-size: 15px; }
+        
+        .service-card:hover { transform: translateY(-15px); border-bottom: 4px solid var(--accent); background: var(--white); box-shadow: 0 30px 60px rgba(0,0,0,0.08); }
+        .service-card:hover i { color: var(--accent); transform: rotateY(360deg); }
+
+        /* --- CONTACT STRIP --- */
+        .contact-info { background: var(--dark); padding: 80px 0; color: var(--white); }
+        .info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; text-align: center; }
+        .info-box i { font-size: 35px; color: var(--accent); margin-bottom: 20px; }
+        .info-box h4 { font-size: 20px; margin-bottom: 10px; text-transform: uppercase; }
+        .info-box p { opacity: 0.8; font-size: 15px; }
 
         /* --- FOOTER --- */
-        footer { padding: 50px 0; background: #001a35; color: rgba(255,255,255,0.6); text-align: center; }
-        .footer-logo { font-size: 30px; color: var(--white); margin-bottom: 20px; font-family: 'Playfair Display', serif; }
+        footer { padding: 40px 0; background: #001a35; color: var(--white); text-align: center; border-top: 1px solid rgba(255,255,255,0.1); }
+        .footer-logo { font-family: 'Montserrat', sans-serif; font-size: 28px; font-weight: 800; margin-bottom: 10px; }
+        .footer-logo span { color: var(--accent); }
+        .footer-tag { font-size: 14px; opacity: 0.7; letter-spacing: 1px; }
 
+        /* --- MOBILE --- */
         @media (max-width: 768px) {
-            .nav-links { display: none; }
-            .hero h1 { font-size: 45px; }
+            nav { height: 70px; background: var(--white); }
+            .brand-name { color: var(--dark); font-size: 20px; }
+            .nav-menu { display: none; }
+            .hero-text h1 { font-size: 45px; }
+            .hero-text p { font-size: 18px; }
         }
     </style>
 </head>
 <body>
 
-    <div id="preloader"><div class="loader"></div></div>
+    <div id="loader"><div class="spin"></div></div>
 
-    <nav class="navbar">
-        <div class="container flex-nav">
-            <div class="logo">
-                <img src="logo.png" alt="Servixa">
-                <div class="logo-text">Servixa Home</div>
+    <nav id="navbar">
+        <div class="container nav-content">
+            <div class="nav-logo">
+                <img src="Logo.png" alt="Servixa Logo">
+                <div class="brand-name">SERVIX<span>X</span>A</div>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-menu">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="tel:8779694303">Support</a></li>
+                <li><a href="tel:8779694303" style="background: var(--accent); color: var(--dark) !important; padding: 10px 20px; border-radius: 4px;">Call Us</a></li>
             </ul>
         </div>
     </nav>
 
     <section id="home" class="hero">
         <div class="container">
-            <div class="hero-content" data-aos="fade-right">
-                <h1>The One Call <span>Solution</span> For Your Home</h1>
-                <p>Providing Premium AC Repair, Plumbing, Electrician, and Maintenance Services in Kopar Khairane, Navi Mumbai.</p>
-                <div class="btn-group">
-                    <a href="tel:8779694303" class="btn btn-gold">Call Now</a>
-                    <a href="https://wa.me/918779694303" class="btn btn-white">WhatsApp</a>
+            <div class="hero-text" data-aos="fade-right">
+                <h1>SERVIX<span>X</span>A HOME</h1>
+                <p>One Call Solution for All Home Services. Providing excellence in Kopar Khairane, Navi Mumbai.</p>
+                <div class="hero-btns">
+                    <a href="tel:8779694303" class="btn btn-accent"><i class="fas fa-phone-alt"></i> 8779694303</a>
+                    <a href="https://wa.me/918779694303" class="btn btn-outline"><i class="fab fa-whatsapp"></i> WhatsApp Chat</a>
                 </div>
             </div>
         </div>
@@ -115,80 +138,95 @@
 
     <section id="services" class="services">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Our Premium Services</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="services-wrapper">
-                <div class="s-card" data-aos="zoom-in" data-aos-delay="100">
+            <span class="section-tag">High Quality</span>
+            <h2 class="section-title" data-aos="fade-up">Professional Services</h2>
+            
+            <div class="services-grid">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="100">
                     <i class="fas fa-snowflake"></i>
                     <h3>AC Repair</h3>
-                    <p>Advanced cooling maintenance and rapid repair services.</p>
+                    <p>Complete gas charging, installation, and deep cleaning for all AC brands.</p>
                 </div>
-                <div class="s-card" data-aos="zoom-in" data-aos-delay="200">
-                    <i class="fas fa-soap"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="200">
+                    <i class="fas fa-fill-drip"></i>
                     <h3>Washing Machine</h3>
-                    <p>Expert care for your laundry appliances with genuine parts.</p>
+                    <p>Expert repair for front load, top load, and semi-automatic machines.</p>
                 </div>
-                <div class="s-card" data-aos="zoom-in" data-aos-delay="300">
-                    <i class="fas fa-tools"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="300">
+                    <i class="fas fa-hammer"></i>
                     <h3>Carpenter</h3>
-                    <p>Bespoke woodwork and furniture restoration by masters.</p>
+                    <p>High-end furniture making and general carpentry repair work.</p>
                 </div>
-                <div class="s-card" data-aos="zoom-in" data-aos-delay="400">
-                    <i class="fas fa-faucet"></i>
+                <div class="service-card" data-aos="fade-up" data-aos-delay="400">
+                    <i class="fas fa-faucet-drip"></i>
                     <h3>Plumbing</h3>
-                    <p>Pristine water solutions and leak-proof installations.</p>
+                    <p>Leakage fixing, pipe fittings, and complete bathroom sanitary solutions.</p>
                 </div>
-                <div class="s-card" data-aos="zoom-in" data-aos-delay="500">
+                <div class="service-card" data-aos="fade-up" data-aos-delay="500">
                     <i class="fas fa-bolt"></i>
                     <h3>Electrician</h3>
-                    <p>Certified electrical services and smart home setups.</p>
+                    <p>House wiring, short circuit repairs, and appliance installations.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="contact-strip">
-        <div class="container contact-grid">
-            <div class="c-item" data-aos="fade-up">
-                <i class="fas fa-map-marker-alt"></i>
-                <h4>Location</h4>
+    <section class="contact-info">
+        <div class="container info-grid">
+            <div class="info-box" data-aos="zoom-in">
+                <i class="fas fa-map-marked-alt"></i>
+                <h4>Our Location</h4>
                 <p>Kopar Khairane, Navi Mumbai</p>
             </div>
-            <div class="c-item" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-envelope"></i>
-                <h4>Email</h4>
+            <div class="info-box" data-aos="zoom-in" data-aos-delay="200">
+                <i class="fas fa-envelope-open-text"></i>
+                <h4>Email Us</h4>
                 <p>support@servixahome.online</p>
             </div>
-            <div class="c-item" data-aos="fade-up" data-aos-delay="400">
-                <i class="fas fa-phone-alt"></i>
-                <h4>Phone</h4>
-                <p>+91 8779694303</p>
+            <div class="info-box" data-aos="zoom-in" data-aos-delay="400">
+                <i class="fas fa-headset"></i>
+                <h4>24/7 Support</h4>
+                <p>One Call Solution: 8779694303</p>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="footer-logo">Servixa Home</div>
-        <p>One Call Solution for All Home Services</p>
-        <p style="margin-top: 20px;">&copy; 2026 Servixa. Professionalism Guaranteed.</p>
+        <div class="container">
+            <div class="footer-logo">SERVIX<span>X</span>A HOME</div>
+            <p class="footer-tag">सेवा • सुरक्षा • समृद्धि</p>
+            <p style="margin-top: 25px; font-size: 12px; opacity: 0.5;">&copy; 2026 Servixa Home. All Rights Reserved.</p>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        // Preloader
+        // Page Loader
         window.addEventListener('load', () => {
-            document.getElementById('preloader').style.display = 'none';
+            document.getElementById('loader').style.display = 'none';
         });
 
-        // AOS Animations
-        AOS.init({ duration: 1200, once: false });
+        // Initialize AOS
+        AOS.init({ duration: 1000, once: false, offset: 120 });
 
-        // Sticky Navbar
+        // Navbar Scroll Effect
         window.addEventListener('scroll', () => {
-            const nav = document.querySelector('.navbar');
-            nav.classList.toggle('sticky', window.scrollY > 100);
+            const nav = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
     </script>
 </body>
