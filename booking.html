@@ -1,39 +1,165 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>Book Service</title>
-<link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Book a Service – Servixa Home</title>
+  <link rel="icon" type="image/png" href="Logo.png" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+<nav class="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="nav-logo">
+      <img src="Logo.png" alt="Servixa Home Logo" />
+      <div class="nav-logo-text"><span class="brand">SERVI<span>XA</span> HOME</span><span class="tagline">सेवा • सुरक्षा • समृद्धि</span></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="reviews.html">Reviews</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="booking.html" class="nav-cta active">Book Now</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-<header>
-<h2>Book Service</h2>
-</header>
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Book a Service</span></div>
+  <h1>Book a <span>Service</span></h1>
+  <p>Fill the form below and our team will confirm your appointment within 30 minutes.</p>
+</div>
 
-<section class="section">
+<section class="section booking-section">
+  <div class="section-inner">
+    <div class="booking-grid">
+      <div class="booking-info">
+        <span class="section-tag">Get in Touch</span>
+        <h2>We're Just a Call Away</h2>
+        <p>Book online or reach us directly via phone or WhatsApp. Our team is available 7 days a week to take your booking and send a technician to your doorstep.</p>
+        <div class="contact-list">
+          <div class="contact-item">
+            <div class="contact-item-icon">📞</div>
+            <div>
+              <a href="tel:+919876543210">+91 98765 43210</a>
+              <div><span>Mon – Sun: 8 AM – 8 PM</span></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">💬</div>
+            <div>
+              <a href="https://wa.me/919876543210" target="_blank">WhatsApp Us</a>
+              <div><span>Quick response within minutes</span></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">📍</div>
+            <div>
+              <a href="#">Navi Mumbai, Maharashtra</a>
+              <div><span>Vashi, Kharghar, Nerul, Belapur & more</span></div>
+            </div>
+          </div>
+          <div class="contact-item">
+            <div class="contact-item-icon">✉️</div>
+            <div>
+              <a href="mailto:info@servixahome.in">info@servixahome.in</a>
+              <div><span>Email support available</span></div>
+            </div>
+          </div>
+        </div>
 
-<h1>Book Now</h1>
+        <!-- ASSURANCES -->
+        <div style="margin-top:32px;padding:24px;background:var(--white);border-radius:var(--radius-lg);border:1px solid rgba(15,45,92,0.08);">
+          <h3 style="font-weight:700;color:var(--navy);margin-bottom:16px;font-size:1rem;">Why Book With Us?</h3>
+          <div style="display:flex;flex-direction:column;gap:10px;">
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-mid);"><span style="color:var(--gold-dark);font-weight:700;">✓</span> Same day service available</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-mid);"><span style="color:var(--gold-dark);font-weight:700;">✓</span> Confirmation within 30 minutes</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-mid);"><span style="color:var(--gold-dark);font-weight:700;">✓</span> 30-day service warranty</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-mid);"><span style="color:var(--gold-dark);font-weight:700;">✓</span> Transparent pricing — no hidden charges</div>
+            <div style="display:flex;align-items:center;gap:10px;font-size:0.875rem;color:var(--text-mid);"><span style="color:var(--gold-dark);font-weight:700;">✓</span> Certified & verified technicians</div>
+          </div>
+        </div>
+      </div>
 
-<form action="https://formspree.io/f/abcxyz" method="POST">
-
-<input type="text" name="name" placeholder="Name" required>
-
-<input type="tel" name="phone" placeholder="Phone" required>
-
-<select name="service">
-<option>AC Repair</option>
-<option>Washing Machine</option>
-<option>Carpenter</option>
-</select>
-
-<textarea name="problem" placeholder="Problem"></textarea>
-
-<button type="submit">Submit</button>
-
-</form>
-
+      <div class="booking-form animate-on-scroll">
+        <div class="form-title">📅 Book Your Service</div>
+        <div id="formAlert" class="alert"></div>
+        <form id="bookingForm">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="name">Full Name *</label>
+              <input type="text" id="name" class="form-input" placeholder="Your full name" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="phone">Phone Number *</label>
+              <input type="tel" id="phone" class="form-input" placeholder="+91 98765 43210" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="service">Service Required *</label>
+            <select id="service" class="form-select" required>
+              <option value="">— Select a service —</option>
+              <option value="AC Repair">AC Repair</option>
+              <option value="AC Gas Refilling">AC Gas Refilling</option>
+              <option value="AC Deep Cleaning">AC Deep Cleaning</option>
+              <option value="AC Installation">AC Installation</option>
+              <option value="Washing Machine Repair">Washing Machine Repair</option>
+              <option value="Washing Machine Installation">Washing Machine Installation</option>
+              <option value="PCB/Board Repair">PCB / Board Repair</option>
+              <option value="Annual Maintenance (AMC)">Annual Maintenance (AMC)</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="brand">Appliance Brand</label>
+              <input type="text" id="brand" class="form-input" placeholder="e.g. Voltas, LG, Samsung" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="date">Preferred Date *</label>
+              <input type="date" id="date" class="form-input" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="address">Full Address *</label>
+            <input type="text" id="address" class="form-input" placeholder="Flat no, Building, Area, Navi Mumbai" required />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="problem">Describe the Problem</label>
+            <textarea id="problem" class="form-textarea" placeholder="Tell us more about the issue with your appliance..."></textarea>
+          </div>
+          <button type="submit" class="btn-primary" style="width:100%;justify-content:center;font-size:1rem;padding:16px;">
+            💬 Book via WhatsApp
+          </button>
+          <p style="text-align:center;font-size:0.8rem;color:var(--gray);margin-top:12px;">Your details will be sent securely to our team via WhatsApp for instant confirmation.</p>
+        </form>
+      </div>
+    </div>
+  </div>
 </section>
 
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand"><img src="Logo.png" alt="Servixa Home" /><p>Navi Mumbai's trusted appliance repair service.</p><p class="hindi-footer">सेवा • सुरक्षा • समृद्धि</p></div>
+      <div class="footer-col"><h4>Services</h4><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="washing-machine.html">WM Repair</a></li><li><a href="services.html">Installation</a></li></ul></div>
+      <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919876543210">📞 +91 98765 43210</a></li><li><a href="https://wa.me/919876543210">💬 WhatsApp</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>© 2025 Servixa Home. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
+  </div>
+</footer>
+<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">💬</a>
+<script src="script.js"></script>
+<script>
+  // Set min date to today
+  const dateInput = document.getElementById('date');
+  if (dateInput) {
+    const today = new Date().toISOString().split('T')[0];
+    dateInput.setAttribute('min', today);
+  }
+</script>
 </body>
 </html>
