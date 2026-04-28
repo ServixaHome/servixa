@@ -1,103 +1,160 @@
-/**
- * SERVIXA HOME - CORE JAVASCRIPT
- * Focus: Performance, SEO, and User Interaction
- */
+// ========================================
+// SERVIXA HOME - Main JavaScript
+// ========================================
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // 1. STICKY NAVBAR & SCROLL PROGRESS
-    const header = document.querySelector('header');
-    const scrollThreshold = 80;
-
+  // ---- NAVBAR SCROLL ----
+  const navbar = document.querySelector('.navbar');
+  if (navbar) {
     window.addEventListener('scroll', () => {
-        if (window.scrollY > scrollThreshold) {
-            header.classList.add('scrolled');
-            // Header ko thoda chhota aur transparent white karne ke liye logic
-            header.style.padding = '10px 0';
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-        } else {
-            header.classList.remove('scrolled');
-            header.style.padding = '20px 0';
-            header.style.background = '#ffffff';
-        }
+      navbar.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  }
+
+  // ---- HAMBURGER MENU ----
+  const hamburger = document.querySelector('.hamburger');
+  const navLinks = document.querySelector('.nav-links');
+  if (hamburger && navLinks) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      navLinks.classList.toggle('open');
     });
 
-    // 2. SMOOTH SCROLLING FOR NAVIGATION LINKS (SEO Best Practice)
-    // Isse user experience behtar hota hai aur Google ise positive signal manta hai
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
+    // Close on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        navLinks.classList.remove('open');
+      });
     });
+  }
 
-    // 3. LAZY LOADING FOR IMAGES
-    // Isse website ki initial loading speed badh jati hai (Lighthouse Score boost)
-    const lazyImages = document.querySelectorAll('img');
-    if ('IntersectionObserver' in window) {
-        const imageObserver = new IntersectionObserver((entries, observer) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const image = entry.target;
-                    // Agar placeholder use kar rahe hain toh yahan src swap hoga
-                    imageObserver.unobserve(image);
-                }
-            });
-        });
-        lazyImages.forEach(img => imageObserver.observe(img));
+  // ---- ACTIVE NAV LINK ----
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('active');
     }
+  });
 
-    // 4. SIMPLE ACCORDION FOR FAQ (SEO Rich Snippets Support)
-    const faqItems = document.querySelectorAll('.faq-item h4');
-    faqItems.forEach(item => {
-        item.style.cursor = 'pointer';
-        item.addEventListener('click', () => {
-            const p = item.nextElementSibling;
-            if (p.style.display === 'block') {
-                p.style.display = 'none';
-            } else {
-                p.style.display = 'block';
-            }
-        });
+  // ---- SCROLL ANIMATIONS ----
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
     });
+  }, { threshold: 0.12 });
 
-    // 5. CALL TO ACTION TRACKER (Optional for Analytics)
-    const ctaButtons = document.querySelectorAll('.btn-gold');
-    ctaButtons.forEach(btn => {
-        btn.addEventListener('click', () => {
-            console.log('User initiated a service request.');
-            // Yahan aap Google Analytics ya Facebook Pixel ka code add kar sakte hain
-        });
-    });
+  document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
 
-    // 6. MINIMAL REVEAL ANIMATION (Performance over heavy libraries)
-    const revealOnScroll = () => {
-        const reveals = document.querySelectorAll('.service-card, .about-text, .faq-item');
-        for (let i = 0; i < reveals.length; i++) {
-            const windowHeight = window.innerHeight;
-            const elementTop = reveals[i].getBoundingClientRect().top;
-            const elementVisible = 150;
-            if (elementTop < windowHeight - elementVisible) {
-                reveals[i].style.opacity = '1';
-                reveals[i].style.transform = 'translateY(0)';
-            }
+  // ---- COUNTER ANIMATION ----
+  const counters = document.querySelectorAll('.counter');
+  if (counters.length) {
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounter(entry.target);
+          counterObserver.unobserve(entry.target);
         }
-    };
-    
-    // Initial style for revealed elements
-    const elementsToAnimate = document.querySelectorAll('.service-card, .about-text, .faq-item');
-    elementsToAnimate.forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'all 0.6s ease-out';
-    });
+      });
+    }, { threshold: 0.5 });
 
-    window.addEventListener('scroll', revealOnScroll);
+    counters.forEach(counter => counterObserver.observe(counter));
+  }
+
+  function animateCounter(el) {
+    const target = parseInt(el.getAttribute('data-target'));
+    const suffix = el.getAttribute('data-suffix') || '';
+    const duration = 1800;
+    const step = target / (duration / 16);
+    let current = 0;
+
+    const timer = setInterval(() => {
+      current = Math.min(current + step, target);
+      el.textContent = Math.round(current) + suffix;
+      if (current >= target) clearInterval(timer);
+    }, 16);
+  }
+
+  // ---- BOOKING FORM ----
+  const bookingForm = document.getElementById('bookingForm');
+  if (bookingForm) {
+    bookingForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      const btn = bookingForm.querySelector('button[type="submit"]');
+      const alert = document.getElementById('formAlert');
+
+      btn.textContent = 'Booking...';
+      btn.disabled = true;
+
+      // Simulate WhatsApp redirect with form data
+      const name = document.getElementById('name')?.value || '';
+      const phone = document.getElementById('phone')?.value || '';
+      const service = document.getElementById('service')?.value || '';
+      const date = document.getElementById('date')?.value || '';
+      const address = document.getElementById('address')?.value || '';
+
+      const message = `Hello Servixa Home! 🙏\n\nNew Booking Request:\n👤 Name: ${name}\n📞 Phone: ${phone}\n🔧 Service: ${service}\n📅 Date: ${date}\n📍 Address: ${address}\n\nPlease confirm my appointment.`;
+
+      setTimeout(() => {
+        const encoded = encodeURIComponent(message);
+        window.open(`https://wa.me/919876543210?text=${encoded}`, '_blank');
+
+        btn.textContent = 'Book Service';
+        btn.disabled = false;
+
+        if (alert) {
+          alert.className = 'alert success';
+          alert.textContent = '✅ Redirecting to WhatsApp! Our team will confirm shortly.';
+          setTimeout(() => alert.className = 'alert', 5000);
+        }
+
+        bookingForm.reset();
+      }, 800);
+    });
+  }
+
+  // ---- SMOOTH SCROLL ----
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // ---- FAQ ACCORDION ----
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const question = item.querySelector('.faq-question');
+    if (question) {
+      question.addEventListener('click', () => {
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    }
+  });
+
+  // ---- MINI LIGHTBOX for service images ----
+  document.querySelectorAll('[data-lightbox]').forEach(img => {
+    img.style.cursor = 'zoom-in';
+    img.addEventListener('click', () => {
+      const overlay = document.createElement('div');
+      overlay.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:9999;display:flex;align-items:center;justify-content:center;cursor:zoom-out;animation:fadeIn 0.2s ease';
+      const clone = img.cloneNode();
+      clone.style.cssText = 'max-width:90vw;max-height:90vh;border-radius:12px;box-shadow:0 40px 80px rgba(0,0,0,0.6)';
+      overlay.appendChild(clone);
+      overlay.addEventListener('click', () => overlay.remove());
+      document.body.appendChild(overlay);
+    });
+  });
 
 });
