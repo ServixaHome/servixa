@@ -1,98 +1,307 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>AC Repair | Servixa Home</title>
-
-<link rel="stylesheet" href="css/style.css">
-<script src="js/script.js" defer></script>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AC Repair Service in Navi Mumbai – Servixa Home</title>
+  <meta name="description" content="Best AC repair service in Navi Mumbai. All brands repaired. Gas filling, deep cleaning, installation. Call 8779694303." />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .ac-hero {
+      background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 60%, #1e6bcc 100%);
+      padding: 100px 20px 50px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    .ac-hero::before {
+      content: '❄️';
+      position: absolute;
+      font-size: 200px;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      opacity: 0.08;
+      line-height: 1;
+    }
+    .ac-hero h1 { font-family: 'Rajdhani', sans-serif; font-size: clamp(30px,7vw,52px); font-weight: 700; margin-bottom: 12px; letter-spacing: 1px; }
+    .ac-hero p { font-size: 15px; color: rgba(255,255,255,0.85); max-width: 500px; line-height: 1.7; margin-bottom: 24px; }
+    .price-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    @media (min-width: 600px) { .price-grid { grid-template-columns: repeat(3, 1fr); } }
+    .price-item {
+      background: var(--white);
+      border-radius: var(--radius-sm);
+      padding: 18px 16px;
+      border: 2px solid var(--light-gray);
+      transition: var(--transition);
+      text-align: center;
+    }
+    .price-item:hover { border-color: var(--primary); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .price-item .service-name { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 6px; }
+    .price-item .amount { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: var(--primary); }
+    .price-item .note { font-size: 11px; color: var(--text-light); margin-top: 2px; }
+  </style>
 </head>
-
 <body>
 
-<!-- HEADER -->
-<header>
-
-<div class="logo">
-<img src="images/logo.png" height="40">
+<div id="page-loader">
+  <div class="loader-logo">SERVI<span>XA</span> HOME</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
 </div>
 
-<nav>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="booking.html">Booking</a>
-<a href="reviews.html">Reviews</a>
-<a href="contact.html">Contact</a>
+<div class="contact-strip">
+  <a href="tel:8779694303">📞 8779694303 – AC Repair Expert</a>
+  <span>|</span>
+  <span>Same Day Service</span>
+</div>
+
+<nav class="navbar">
+  <a href="index.html" class="nav-logo">
+    <img src="Logo.png" alt="Servixa Home" onerror="this.style.display='none'" />
+    <div class="nav-logo-text">
+      <span class="brand">SERVIXA HOME</span>
+      <span class="tagline">Navi Mumbai</span>
+    </div>
+  </a>
+  <div class="nav-menu"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="services.html">🛠️ Services</a>
+    <a href="reviews.html">⭐ Reviews</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="booking.html" class="nav-cta">📅 Book Now</a>
+  </div>
 </nav>
 
-</header>
-
-
-<!-- HERO -->
-<section class="hero">
-
-<img src="images/ac.jpg" class="hero-img">
-
-<div class="hero-text">
-
-<h1>AC Repair Service</h1>
-
-<p>Fast AC repair in Mumbai & Navi Mumbai</p>
-
-<a href="booking.html" class="btn">Book AC Service</a>
-
+<!-- Hero -->
+<div class="ac-hero">
+  <span class="section-badge" style="margin-bottom:14px;display:inline-block">❄️ AC Repair Expert</span>
+  <h1>AC Repair & Service<br/>in Navi Mumbai</h1>
+  <p>All brands, all models. Window AC, Split AC, Inverter AC – we repair everything. Same day service available in Kopar Khairane and surrounding areas.</p>
+  <div style="display:flex;gap:12px;flex-wrap:wrap">
+    <a href="booking.html" class="btn btn-gold btn-lg">📅 Book AC Service</a>
+    <a href="tel:8779694303" class="btn btn-white btn-lg">📞 Call Now</a>
+  </div>
+  <div class="breadcrumb" style="justify-content:flex-start;margin-top:24px">
+    <a href="index.html">Home</a><span>›</span>
+    <a href="services.html">Services</a><span>›</span>
+    <span style="color:rgba(255,255,255,0.7)">AC Repair</span>
+  </div>
 </div>
 
-</section>
+<div class="trust-bar">
+  <div class="trust-item"><span class="icon">✅</span> All Brands</div>
+  <div class="trust-item"><span class="icon">⚡</span> Same Day Service</div>
+  <div class="trust-item"><span class="icon">🔒</span> Service Warranty</div>
+  <div class="trust-item"><span class="icon">💰</span> Starting ₹299</div>
+</div>
 
-
-<!-- DETAILS -->
+<!-- Pricing -->
 <section class="section">
-
-<h2>Our AC Services</h2>
-
-<p>
-
-We provide AC installation, gas filling, cooling repair,
-and maintenance services at your doorstep.
-
-</p>
-
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">Pricing</span>
+      <h2 class="section-title">AC Service <span>Charges</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Transparent pricing. Final cost shared before starting work. No hidden charges.</p>
+    </div>
+    <div class="price-grid">
+      <div class="price-item fade-in">
+        <div class="service-name">🔧 General Repair</div>
+        <div class="amount">₹299+</div>
+        <div class="note">Starting price</div>
+      </div>
+      <div class="price-item fade-in">
+        <div class="service-name">🧹 Deep Cleaning</div>
+        <div class="amount">₹499+</div>
+        <div class="note">Per unit</div>
+      </div>
+      <div class="price-item fade-in">
+        <div class="service-name">💨 Gas Filling</div>
+        <div class="amount">₹899+</div>
+        <div class="note">Includes gas + labor</div>
+      </div>
+      <div class="price-item fade-in">
+        <div class="service-name">🔌 Installation</div>
+        <div class="amount">₹799+</div>
+        <div class="note">Standard installation</div>
+      </div>
+      <div class="price-item fade-in">
+        <div class="service-name">🔄 Uninstallation</div>
+        <div class="amount">₹399+</div>
+        <div class="note">Careful dismantling</div>
+      </div>
+      <div class="price-item fade-in">
+        <div class="service-name">📋 AMC Package</div>
+        <div class="amount">₹1499+</div>
+        <div class="note">Annual maintenance</div>
+      </div>
+    </div>
+    <div class="alert alert-info" style="margin-top:20px">
+      ℹ️ All prices are indicative. Final charges depend on AC type, brand & problem severity. Free inspection on every visit.
+    </div>
+  </div>
 </section>
 
+<!-- Services List -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">What We Fix</span>
+      <h2 class="section-title">All AC <span>Services</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="grid-2">
+      <div class="card fade-in">
+        <h4 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:var(--primary)">❄️ Repair Services</h4>
+        <ul class="feature-list">
+          <li>AC not cooling / poor cooling</li>
+          <li>AC not turning on / power issues</li>
+          <li>Water leaking from AC</li>
+          <li>Strange noise from AC unit</li>
+          <li>Remote control not working</li>
+          <li>Compressor issues</li>
+          <li>PCB / circuit board repair</li>
+          <li>Fan motor replacement</li>
+        </ul>
+      </div>
+      <div class="card fade-in">
+        <h4 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:16px;color:var(--primary)">🛠️ Maintenance Services</h4>
+        <ul class="feature-list">
+          <li>AC deep cleaning (indoor + outdoor)</li>
+          <li>Filter cleaning & replacement</li>
+          <li>Gas refilling / recharging</li>
+          <li>Coil cleaning & sanitization</li>
+          <li>Annual maintenance contracts</li>
+          <li>Pre-summer servicing</li>
+          <li>AC installation (new)</li>
+          <li>AC shifting / relocation</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-<!-- BENEFITS -->
+<!-- Brands -->
 <section class="section">
-
-<h2>Why Choose Us</h2>
-
-<p>
-
-✔ Same Day Service  
-✔ Affordable Price  
-✔ Expert Technician  
-✔ Doorstep Service  
-
-</p>
-
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">Brands</span>
+      <h2 class="section-title">AC Brands We <span>Service</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:12px;justify-content:center" class="fade-in">
+      {['Voltas','Daikin','LG','Samsung','Hitachi','Blue Star','Whirlpool','Carrier','Godrej','Panasonic','Lloyd','O General','Haier','Onida','Videocon'].map(b => `
+      <span style="padding:10px 20px;background:var(--light-gray);border-radius:20px;font-size:13px;font-weight:600;color:var(--text)">${b}</span>`).join('')}
+    </div>
+    <p style="text-align:center;color:var(--text-light);font-size:13px;margin-top:16px">Don't see your brand? Call us – we service ALL AC brands!</p>
+  </div>
 </section>
 
+<!-- Process -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">How It Works</span>
+      <h2 class="section-title">Our AC Repair <span>Process</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="process-steps">
+      <div class="process-step fade-in"><div class="step-num">1</div><div class="step-content"><h4>📞 Call or Book Online</h4><p>Call 8779694303 or book online. Share your AC problem & preferred time.</p></div></div>
+      <div class="process-step fade-in"><div class="step-num">2</div><div class="step-content"><h4>👨‍🔧 Technician Arrives</h4><p>Our certified AC technician arrives on time with tools & spare parts.</p></div></div>
+      <div class="process-step fade-in"><div class="step-num">3</div><div class="step-content"><h4>🔍 Free Diagnosis</h4><p>Technician inspects the AC and shares the issue & repair cost before starting.</p></div></div>
+      <div class="process-step fade-in"><div class="step-num">4</div><div class="step-content"><h4>✅ AC Fixed & Working</h4><p>Repair done professionally. AC tested. Pay only after you're satisfied.</p></div></div>
+    </div>
+  </div>
+</section>
 
-<!-- FOOTER -->
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">FAQ</span>
+      <h2 class="section-title">Common <span>Questions</span></h2>
+      <div class="divider"></div>
+    </div>
+    <div class="fade-in">
+      <div class="faq-item">
+        <div class="faq-question">How long does AC repair take? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Most AC repairs take 1–3 hours depending on the issue. Gas filling takes about 1 hour. Deep cleaning takes 45–60 minutes per unit.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you carry spare parts? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Our technicians carry common spare parts. For specific or rare parts, we may need 1–2 days. We'll inform you in advance.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Is there a service charge for the visit? <span class="arrow">▼</span></div>
+        <div class="faq-answer">We offer free inspection on every visit. The service charge is only for the actual repair work done. No hidden visit charges.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Do you provide warranty on repairs? <span class="arrow">▼</span></div>
+        <div class="faq-answer">Yes! All our AC repairs come with a service warranty. If the same issue reoccurs within the warranty period, we'll fix it free of charge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often should I get my AC serviced? <span class="arrow">▼</span></div>
+        <div class="faq-answer">We recommend AC servicing at least once a year, ideally before summer (March-April). Regular servicing improves cooling efficiency and extends AC lifespan.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section style="background:linear-gradient(135deg,var(--primary-dark),var(--primary));padding:50px 20px;text-align:center">
+  <h2 style="font-family:'Rajdhani',sans-serif;font-size:clamp(24px,5vw,36px);color:#fff;font-weight:700;margin-bottom:12px">Book Your AC Service Now!</h2>
+  <p style="color:rgba(255,255,255,0.8);margin-bottom:24px;font-size:15px">Same day service available • Free inspection • All brands</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="booking.html" class="btn btn-gold btn-lg">📅 Book AC Service</a>
+    <a href="tel:8779694303" class="btn btn-white btn-lg">📞 8779694303</a>
+  </div>
+</section>
+
 <footer>
-
-<p>📞 8779694303</p>
-<p>✉ home.servixa@gmail.com</p>
-<p>Mumbai & Navi Mumbai</p>
-
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>SERVIXA HOME</h3>
+      <p class="hindi-tagline">सेवा • सुरक्षा • समृद्धि</p>
+      <p>Best AC repair service in Navi Mumbai.</p>
+    </div>
+    <div class="footer-col">
+      <h4>AC Services</h4>
+      <ul>
+        <li><a href="booking.html">❄️ Book AC Repair</a></li>
+        <li><a href="booking.html">🧹 AC Deep Cleaning</a></li>
+        <li><a href="booking.html">💨 Gas Filling</a></li>
+        <li><a href="booking.html">🔌 AC Installation</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span class="icon">📞</span><a href="tel:8779694303">8779694303</a></div>
+      <div class="footer-contact-item"><span class="icon">✉️</span><a href="mailto:home.servixa@gmail.com">home.servixa@gmail.com</a></div>
+      <div class="footer-contact-item"><span class="icon">📍</span><span>Kopar Khairane, Navi Mumbai</span></div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2025 Servixa Home. All Rights Reserved.</span>
+  </div>
 </footer>
 
-<!-- WHATSAPP -->
-<a href="https://wa.me/918779694303" class="whatsapp">💬</a>
-
+<a href="https://wa.me/918779694303?text=Hi! I need AC repair service." target="_blank" class="whatsapp-float">💬</a>
+<a href="tel:8779694303" class="call-float">📞</a>
+<div class="back-top">↑</div>
+<script src="script.js"></script>
+<script>
+// Replace template literal brand list
+document.querySelectorAll('.container').forEach(c => {
+  if (c.innerHTML.includes('.map(b =>')) {
+    const brands = ['Voltas','Daikin','LG','Samsung','Hitachi','Blue Star','Whirlpool','Carrier','Godrej','Panasonic','Lloyd','O General','Haier','Onida','Videocon'];
+    const wrapper = c.querySelector('[style*="flex-wrap"]');
+    if (wrapper) {
+      wrapper.innerHTML = brands.map(b => `<span style="padding:10px 20px;background:var(--light-gray);border-radius:20px;font-size:13px;font-weight:600;color:var(--text)">${b}</span>`).join('');
+    }
+  }
+});
+</script>
 </body>
 </html>
