@@ -3,257 +3,304 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Services – Servixa Home</title>
-  <meta name="description" content="AC repair, washing machine repair, installation and AMC services in Navi Mumbai by Servixa Home." />
-  <link rel="icon" type="image/png" href="Logo.png" />
+  <title>Our Services – Servixa Home Navi Mumbai</title>
   <link rel="stylesheet" href="style.css" />
   <style>
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 48px; }
-    .price-card { background: var(--white); border: 1.5px solid rgba(15,45,92,0.1); border-radius: var(--radius-lg); padding: 32px; text-align: center; transition: var(--transition); position: relative; }
-    .price-card.featured { border-color: var(--gold); box-shadow: 0 0 0 2px rgba(245,166,35,0.15); }
-    .price-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--gold); color: var(--navy-dark); padding: 4px 18px; border-radius: 50px; font-size: 0.75rem; font-weight: 700; letter-spacing: 0.06em; white-space: nowrap; }
-    .price-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-    .price-icon { font-size: 2.5rem; margin-bottom: 16px; }
-    .price-card h3 { font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
-    .price-from { font-size: 0.8rem; color: var(--gray); margin-bottom: 4px; }
-    .price-amount { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 800; color: var(--navy); margin-bottom: 20px; }
-    .price-amount span { font-size: 1rem; font-weight: 400; color: var(--gray); }
-    .price-list { list-style: none; text-align: left; display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-    .price-list li { display: flex; align-items: center; gap: 8px; font-size: 0.875rem; color: var(--text-mid); }
-    .price-list li::before { content: '✓'; color: var(--gold-dark); font-weight: 700; }
-    .brand-logos { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-top: 32px; }
-    .brand-chip { background: var(--white); border: 1px solid rgba(15,45,92,0.1); padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 600; color: var(--navy); transition: var(--transition); }
-    .brand-chip:hover { background: var(--navy); color: white; }
-    .faq-list { display: flex; flex-direction: column; gap: 12px; max-width: 760px; margin: 0 auto; }
-    .faq-item { background: var(--white); border: 1px solid rgba(15,45,92,0.08); border-radius: var(--radius); overflow: hidden; }
-    .faq-question { padding: 20px 24px; font-weight: 600; font-size: 0.95rem; color: var(--navy); cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: var(--transition); }
-    .faq-question:hover { background: var(--off-white); }
-    .faq-question::after { content: '+'; font-size: 1.4rem; color: var(--gold-dark); font-weight: 300; transition: var(--transition); }
-    .faq-item.open .faq-question::after { content: '−'; }
-    .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.35s ease; }
-    .faq-item.open .faq-answer { max-height: 200px; }
-    .faq-answer p { padding: 0 24px 20px; font-size: 0.9rem; color: var(--gray); line-height: 1.7; }
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+    @media (min-width: 600px) { .services-grid { grid-template-columns: repeat(2, 1fr); } }
+    .service-big-card {
+      background: var(--white);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(26,58,143,0.06);
+      transition: var(--transition);
+    }
+    .service-big-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+    .sbc-header {
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .sbc-icon {
+      width: 64px; height: 64px;
+      border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 32px;
+      flex-shrink: 0;
+    }
+    .sbc-header h3 { font-family: 'Rajdhani', sans-serif; font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+    .sbc-header p { font-size: 13px; color: var(--text-light); }
+    .sbc-services { padding: 0 24px; }
+    .sbc-service-item {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--light-gray);
+      font-size: 14px;
+    }
+    .sbc-service-item:last-child { border-bottom: none; }
+    .sbc-service-item .name { display: flex; align-items: center; gap: 8px; font-weight: 500; }
+    .sbc-service-item .price { color: var(--primary); font-weight: 600; font-size: 13px; }
+    .sbc-footer { padding: 20px 24px; background: var(--light-gray); display: flex; gap: 10px; }
   </style>
 </head>
 <body>
+
+<div id="page-loader">
+  <div class="loader-logo">SERVI<span>XA</span> HOME</div>
+  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+</div>
+
+<div class="contact-strip">
+  <a href="tel:8779694303">📞 8779694303</a>
+  <span>|</span>
+  <a href="mailto:home.servixa@gmail.com">✉️ home.servixa@gmail.com</a>
+</div>
+
 <nav class="navbar">
-  <div class="nav-container">
-    <a href="index.html" class="nav-logo">
-      <img src="Logo.png" alt="Servixa Home Logo" />
-      <div class="nav-logo-text">
-        <span class="brand">SERVI<span>XA</span> HOME</span>
-        <span class="tagline">सेवा • सुरक्षा • समृद्धि</span>
-      </div>
-    </a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="services.html" class="active">Services</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="reviews.html">Reviews</a></li>
-      <li><a href="contact.html">Contact</a></li>
-      <li><a href="booking.html" class="nav-cta">Book Now</a></li>
-    </ul>
-    <button class="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <a href="index.html" class="nav-logo">
+    <img src="Logo.png" alt="Servixa Home" onerror="this.style.display='none'" />
+    <div class="nav-logo-text">
+      <span class="brand">SERVIXA HOME</span>
+      <span class="tagline">Navi Mumbai</span>
+    </div>
+  </a>
+  <div class="nav-menu"><span></span><span></span><span></span></div>
+  <div class="nav-links">
+    <a href="index.html">🏠 Home</a>
+    <a href="about.html">ℹ️ About</a>
+    <a href="services.html" class="active">🛠️ Services</a>
+    <a href="reviews.html">⭐ Reviews</a>
+    <a href="contact.html">📞 Contact</a>
+    <a href="booking.html" class="nav-cta">📅 Book Now</a>
   </div>
 </nav>
 
-<div class="page-hero">
-  <div class="breadcrumb"><a href="index.html">Home</a><span class="sep">/</span><span class="current">Services</span></div>
-  <h1>Our <span>Services</span></h1>
-  <p>Complete home appliance repair and maintenance — all brands, all models, at your doorstep.</p>
+<div class="page-header">
+  <h1>🛠️ Our Services</h1>
+  <p>Professional home repair & maintenance in Navi Mumbai</p>
+  <div class="breadcrumb">
+    <a href="index.html">Home</a>
+    <span>›</span>
+    <span>Services</span>
+  </div>
 </div>
 
-<!-- MAIN SERVICES -->
+<!-- Alert -->
+<div style="background:var(--gold);padding:12px 20px;text-align:center;font-size:13px;font-weight:600;color:var(--primary-dark)">
+  ⚡ Same Day Service Available | 📞 Call 8779694303 | Free Inspection on Every Visit
+</div>
+
 <section class="section">
-  <div class="section-inner">
-    <div class="section-header center">
-      <span class="section-tag">What We Do</span>
-      <h2 class="section-title">Expert <span>Appliance Repair</span> Services</h2>
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">All Services</span>
+      <h2 class="section-title">Everything We <span>Repair & Build</span></h2>
+      <div class="divider"></div>
+      <p class="section-subtitle">Transparent pricing • Certified technicians • Service warranty included</p>
     </div>
+
     <div class="services-grid">
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">❄️</div>
-        <h3>AC Repair</h3>
-        <p>Not cooling? Leaking water? Strange noise? We diagnose and fix all AC problems — split, window, cassette AC.</p>
-        <a href="ac-repair.html" class="service-link">Book Now →</a>
+      <!-- AC Services -->
+      <div class="service-big-card fade-in">
+        <div class="sbc-header" style="background:linear-gradient(135deg,rgba(26,58,143,0.05),rgba(37,80,192,0.08))">
+          <div class="sbc-icon" style="background:linear-gradient(135deg,var(--primary),var(--primary-light))">❄️</div>
+          <div>
+            <h3>AC Repair & Service</h3>
+            <p>All brands • Window • Split • Inverter</p>
+          </div>
+        </div>
+        <div class="sbc-services">
+          <div class="sbc-service-item">
+            <span class="name">🔧 AC Repair (General)</span>
+            <span class="price">₹299 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🧹 AC Deep Cleaning</span>
+            <span class="price">₹499 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">💨 Gas Filling / Recharge</span>
+            <span class="price">₹899 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🔌 AC Installation</span>
+            <span class="price">₹799 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">📋 Annual Maintenance (AMC)</span>
+            <span class="price">₹1499/year</span>
+          </div>
+        </div>
+        <div class="sbc-footer">
+          <a href="ac-repair.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center">Learn More</a>
+          <a href="booking.html" class="btn btn-gold btn-sm" style="flex:1;justify-content:center">Book Now</a>
+        </div>
       </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">🌬️</div>
-        <h3>AC Gas Refilling</h3>
-        <p>Low refrigerant gas is the most common reason for poor cooling. We refill with the correct gas type — R22, R32, R410A.</p>
-        <a href="booking.html" class="service-link">Book Now →</a>
+
+      <!-- Washing Machine -->
+      <div class="service-big-card fade-in">
+        <div class="sbc-header" style="background:linear-gradient(135deg,rgba(15,36,96,0.05),rgba(26,58,143,0.08))">
+          <div class="sbc-icon" style="background:linear-gradient(135deg,var(--primary-dark),var(--primary))">🫧</div>
+          <div>
+            <h3>Washing Machine Repair</h3>
+            <p>Top Load • Front Load • Semi-Auto</p>
+          </div>
+        </div>
+        <div class="sbc-services">
+          <div class="sbc-service-item">
+            <span class="name">🔧 WM Repair (General)</span>
+            <span class="price">₹299 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">⚙️ Motor Repair / Replace</span>
+            <span class="price">₹599 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">💧 Water Leakage Fix</span>
+            <span class="price">₹399 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🧹 Deep Cleaning</span>
+            <span class="price">₹499 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🔌 Installation</span>
+            <span class="price">₹299 onwards</span>
+          </div>
+        </div>
+        <div class="sbc-footer">
+          <a href="washing-machine.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center">Learn More</a>
+          <a href="booking.html" class="btn btn-gold btn-sm" style="flex:1;justify-content:center">Book Now</a>
+        </div>
       </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">🧹</div>
-        <h3>AC Deep Cleaning</h3>
-        <p>Jet wash service for indoor and outdoor AC units. Removes dust, bacteria, and improves cooling efficiency by up to 30%.</p>
-        <a href="booking.html" class="service-link">Book Now →</a>
+
+      <!-- Carpenter -->
+      <div class="service-big-card fade-in">
+        <div class="sbc-header" style="background:linear-gradient(135deg,rgba(196,138,10,0.06),rgba(230,168,23,0.1))">
+          <div class="sbc-icon" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold))">🔨</div>
+          <div>
+            <h3>Carpenter Services</h3>
+            <p>Furniture • Doors • Windows • Custom Work</p>
+          </div>
+        </div>
+        <div class="sbc-services">
+          <div class="sbc-service-item">
+            <span class="name">🪑 Furniture Repair</span>
+            <span class="price">₹199 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🚪 Door & Window Repair</span>
+            <span class="price">₹299 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🛏️ Bed / Sofa Repair</span>
+            <span class="price">₹399 onwards</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🪵 Custom Furniture</span>
+            <span class="price">Quote on visit</span>
+          </div>
+          <div class="sbc-service-item">
+            <span class="name">🍳 Modular Kitchen Work</span>
+            <span class="price">Quote on visit</span>
+          </div>
+        </div>
+        <div class="sbc-footer">
+          <a href="carpenter.html" class="btn btn-primary btn-sm" style="flex:1;justify-content:center">Learn More</a>
+          <a href="booking.html" class="btn btn-gold btn-sm" style="flex:1;justify-content:center">Book Now</a>
+        </div>
       </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">📲</div>
-        <h3>AC Installation</h3>
-        <p>New AC installation with proper copper pipe fitting, electrical connection, and fully tested setup.</p>
-        <a href="booking.html" class="service-link">Book Now →</a>
-      </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">🫧</div>
-        <h3>Washing Machine Repair</h3>
-        <p>Front load, top load, semi-auto — error codes, drum issues, motor problems, spin failure, and more.</p>
-        <a href="washing-machine.html" class="service-link">Book Now →</a>
-      </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">🔌</div>
-        <h3>PCB / Board Repair</h3>
-        <p>Circuit board diagnosis and repair for both AC and washing machines. Saves you from expensive replacements.</p>
-        <a href="booking.html" class="service-link">Book Now →</a>
-      </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">🔧</div>
-        <h3>Washing Machine Installation</h3>
-        <p>Professional installation with water inlet, drain pipe setup, and leveling for optimal performance.</p>
-        <a href="booking.html" class="service-link">Book Now →</a>
-      </div>
-      <div class="service-card animate-on-scroll">
-        <div class="service-icon">📋</div>
-        <h3>Annual Maintenance (AMC)</h3>
-        <p>Keep your appliances in top condition year-round. AMC plans for AC and washing machines — affordable monthly rates.</p>
-        <a href="booking.html" class="service-link">Know More →</a>
+
+      <!-- Emergency / Quick Info Card -->
+      <div class="fade-in" style="background:linear-gradient(135deg,var(--primary-dark),var(--primary));border-radius:var(--radius);padding:28px;color:#fff;display:flex;flex-direction:column;justify-content:space-between">
+        <div>
+          <div style="font-size:40px;margin-bottom:12px">⚡</div>
+          <h3 style="font-family:'Rajdhani',sans-serif;font-size:24px;font-weight:700;margin-bottom:10px">Need Emergency Service?</h3>
+          <p style="font-size:14px;color:rgba(255,255,255,0.8);line-height:1.7;margin-bottom:20px">AC not working in summer heat? Washing machine flooded? We're just one call away. Same day emergency service available!</p>
+          <ul style="list-style:none;margin-bottom:24px">
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1)"><span style="color:var(--gold)">✓</span> Quick response within 2 hours</li>
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;color:rgba(255,255,255,0.85);border-bottom:1px solid rgba(255,255,255,0.1)"><span style="color:var(--gold)">✓</span> Expert technicians on standby</li>
+            <li style="display:flex;align-items:center;gap:8px;padding:6px 0;font-size:13px;color:rgba(255,255,255,0.85)"><span style="color:var(--gold)">✓</span> Serving all of Navi Mumbai</li>
+          </ul>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap">
+          <a href="tel:8779694303" class="btn btn-gold" style="flex:1;justify-content:center">📞 Call Now</a>
+          <a href="https://wa.me/918779694303" target="_blank" class="btn btn-white" style="flex:1;justify-content:center">💬 WhatsApp</a>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PRICING -->
-<section class="section bg-light">
-  <div class="section-inner">
-    <div class="section-header center">
-      <span class="section-tag">Pricing</span>
-      <h2 class="section-title">Transparent <span>Pricing</span></h2>
-      <p class="section-subtitle">No hidden charges. You'll always know the price before we start. Final quote given on-site after inspection.</p>
+<!-- Why Us -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="section-badge">Our Promise</span>
+      <h2 class="section-title">Service <span>Guarantee</span></h2>
+      <div class="divider"></div>
     </div>
-    <div class="pricing-grid">
-      <div class="price-card animate-on-scroll">
-        <div class="price-icon">🔍</div>
-        <h3>Inspection / Visit</h3>
-        <div class="price-from">Starting from</div>
-        <div class="price-amount">₹199 <span>/ visit</span></div>
-        <ul class="price-list">
-          <li>Expert technician visit</li>
-          <li>Full diagnosis included</li>
-          <li>Written estimate provided</li>
-          <li>Adjusted in final bill</li>
-        </ul>
-        <a href="booking.html" class="btn-primary" style="width:100%;justify-content:center;">Book Inspection</a>
+    <div class="grid-3">
+      <div class="card fade-in" style="text-align:center">
+        <div style="font-size:40px;margin-bottom:12px">🔍</div>
+        <h4 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Free Inspection</h4>
+        <p style="font-size:13px;color:var(--text-light)">Every visit starts with a free diagnosis. No inspection charges.</p>
       </div>
-      <div class="price-card featured animate-on-scroll">
-        <div class="price-badge">⭐ Most Popular</div>
-        <div class="price-icon">❄️</div>
-        <h3>AC Service Package</h3>
-        <div class="price-from">Starting from</div>
-        <div class="price-amount">₹599 <span>/ service</span></div>
-        <ul class="price-list">
-          <li>Indoor + outdoor cleaning</li>
-          <li>Filter wash & inspection</li>
-          <li>Gas pressure check</li>
-          <li>Performance testing</li>
-          <li>30-day service warranty</li>
-        </ul>
-        <a href="booking.html" class="btn-primary" style="width:100%;justify-content:center;">Book AC Service</a>
+      <div class="card fade-in" style="text-align:center">
+        <div style="font-size:40px;margin-bottom:12px">💰</div>
+        <h4 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Transparent Pricing</h4>
+        <p style="font-size:13px;color:var(--text-light)">Cost is shared before work begins. Zero hidden charges, ever.</p>
       </div>
-      <div class="price-card animate-on-scroll">
-        <div class="price-icon">🫧</div>
-        <h3>Washing Machine Repair</h3>
-        <div class="price-from">Starting from</div>
-        <div class="price-amount">₹399 <span>/ repair</span></div>
-        <ul class="price-list">
-          <li>All types covered</li>
-          <li>Spare parts at cost</li>
-          <li>Same day service</li>
-          <li>30-day warranty</li>
-        </ul>
-        <a href="booking.html" class="btn-primary" style="width:100%;justify-content:center;">Book Repair</a>
+      <div class="card fade-in" style="text-align:center">
+        <div style="font-size:40px;margin-bottom:12px">🛡️</div>
+        <h4 style="font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;margin-bottom:8px">Warranty on Work</h4>
+        <p style="font-size:13px;color:var(--text-light)">All repairs backed by service warranty for your peace of mind.</p>
       </div>
-    </div>
-    <p style="text-align:center;color:var(--gray);font-size:0.85rem;margin-top:24px;">* Prices may vary based on brand, model, and fault severity. Final price confirmed after on-site inspection.</p>
-  </div>
-</section>
-
-<!-- BRANDS -->
-<section class="section">
-  <div class="section-inner">
-    <div class="section-header center">
-      <span class="section-tag">All Brands</span>
-      <h2 class="section-title">We Service <span>All Brands</span></h2>
-    </div>
-    <div class="brand-logos">
-      <div class="brand-chip">Voltas</div>
-      <div class="brand-chip">Daikin</div>
-      <div class="brand-chip">LG</div>
-      <div class="brand-chip">Samsung</div>
-      <div class="brand-chip">Carrier</div>
-      <div class="brand-chip">Blue Star</div>
-      <div class="brand-chip">Hitachi</div>
-      <div class="brand-chip">Panasonic</div>
-      <div class="brand-chip">Whirlpool</div>
-      <div class="brand-chip">IFB</div>
-      <div class="brand-chip">Bosch</div>
-      <div class="brand-chip">Godrej</div>
-      <div class="brand-chip">Haier</div>
-      <div class="brand-chip">Onida</div>
-      <div class="brand-chip">O General</div>
-      <div class="brand-chip">Lloyd</div>
     </div>
   </div>
 </section>
 
-<!-- FAQ -->
-<section class="section bg-light">
-  <div class="section-inner">
-    <div class="section-header center">
-      <span class="section-tag">FAQ</span>
-      <h2 class="section-title">Frequently Asked <span>Questions</span></h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-question">Do you provide same day service?</div>
-        <div class="faq-answer"><p>Yes! If you book before 1 PM, our technician will visit the same day. We cover all areas in Navi Mumbai including Vashi, Kharghar, Nerul, Belapur, Airoli, and more.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What is your service warranty?</div>
-        <div class="faq-answer"><p>All our repairs come with a 30-day service warranty. If the same problem recurs within 30 days, we will fix it at no extra charge.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Do you use genuine spare parts?</div>
-        <div class="faq-answer"><p>Yes, we use only original or OEM-quality spare parts. Parts are billed separately at actual cost with a receipt provided.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How do I book a service?</div>
-        <div class="faq-answer"><p>You can book online through our booking form, call us directly, or send us a message on WhatsApp. We'll confirm your appointment within 30 minutes.</p></div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">What areas do you cover in Navi Mumbai?</div>
-        <div class="faq-answer"><p>We cover all of Navi Mumbai including Vashi, Kharghar, Nerul, Belapur, Seawoods, Panvel, Airoli, Ghansoli, Kopar Khairane, and surrounding areas.</p></div>
-      </div>
-    </div>
+<section class="cta-section" style="background:linear-gradient(135deg,var(--primary-dark),var(--primary));padding:50px 20px;text-align:center">
+  <h2 style="font-family:'Rajdhani',sans-serif;font-size:clamp(24px,5vw,36px);color:#fff;font-weight:700;margin-bottom:12px">Book Your Service Today!</h2>
+  <p style="color:rgba(255,255,255,0.8);margin-bottom:24px">Same day service • Free inspection • Transparent pricing</p>
+  <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+    <a href="booking.html" class="btn btn-gold btn-lg">📅 Book Online</a>
+    <a href="tel:8779694303" class="btn btn-white btn-lg">📞 8779694303</a>
   </div>
 </section>
 
 <footer>
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="Logo.png" alt="Servixa Home" />
-        <p>Navi Mumbai's most trusted AC and Washing Machine repair service.</p>
-        <p class="hindi-footer">सेवा • सुरक्षा • समृद्धि</p>
-      </div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="washing-machine.html">WM Repair</a></li><li><a href="services.html">Installation</a></li><li><a href="services.html">AMC</a></li></ul></div>
-      <div class="footer-col"><h4>Quick Links</h4><ul><li><a href="about.html">About</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="booking.html">Book</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919876543210">📞 +91 98765 43210</a></li><li><a href="https://wa.me/919876543210">💬 WhatsApp</a></li><li><a href="#">📍 Navi Mumbai</a></li></ul></div>
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <h3>SERVIXA HOME</h3>
+      <p class="hindi-tagline">सेवा • सुरक्षा • समृद्धि</p>
+      <p>Professional home repair services in Navi Mumbai.</p>
     </div>
-    <div class="footer-bottom"><span>© 2025 Servixa Home. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul>
+        <li><a href="ac-repair.html">❄️ AC Repair</a></li>
+        <li><a href="washing-machine.html">🫧 Washing Machine</a></li>
+        <li><a href="carpenter.html">🔨 Carpenter</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact-item"><span class="icon">📞</span><a href="tel:8779694303">8779694303</a></div>
+      <div class="footer-contact-item"><span class="icon">✉️</span><a href="mailto:home.servixa@gmail.com">home.servixa@gmail.com</a></div>
+      <div class="footer-contact-item"><span class="icon">📍</span><span>Kopar Khairane, Navi Mumbai</span></div>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>© 2025 Servixa Home. All Rights Reserved.</span>
   </div>
 </footer>
-<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">💬</a>
+
+<a href="https://wa.me/918779694303" target="_blank" class="whatsapp-float">💬</a>
+<a href="tel:8779694303" class="call-float">📞</a>
+<div class="back-top">↑</div>
 <script src="script.js"></script>
 </body>
-  </html>
+</html>
