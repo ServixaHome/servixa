@@ -3,530 +3,404 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Servixa Home – AC & Washing Machine Repair in Navi Mumbai</title>
-  <meta name="description" content="Professional AC Repair, Washing Machine Repair & Carpenter Services in Kopar Khairane, Navi Mumbai. Call 8779694303 for same-day service." />
+  <title>Servixa Home – AC Repair, Washing Machine Repair & Carpenter in Navi Mumbai</title>
+  <meta name="description" content="Servixa Home – Navi Mumbai's most trusted home repair service. AC repair, washing machine repair & carpenter services in Kopar Khairane, Vashi, Nerul. Same day service. Call 8779694303." />
+  <meta name="keywords" content="AC repair Navi Mumbai, washing machine repair Kopar Khairane, carpenter service Navi Mumbai, AC service Vashi, home repair Navi Mumbai, AC repair near me, best AC repair Navi Mumbai, washing machine repair Nerul" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Servixa Home" />
+  <link rel="canonical" href="https://servixahome.online/" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Servixa Home – AC & Washing Machine Repair Navi Mumbai" />
+  <meta property="og:description" content="Same day AC repair, washing machine repair & carpenter services in Navi Mumbai. Starting ₹299. Call 8779694303." />
+  <meta property="og:url" content="https://servixahome.online/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://servixahome.online/Logo.png" />
+  <!-- Schema.org Local Business -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Servixa Home",
+    "description": "AC repair, washing machine repair and carpenter services in Navi Mumbai",
+    "url": "https://servixahome.online",
+    "telephone": "+918779694303",
+    "email": "home.servixa@gmail.com",
+    "image": "https://servixahome.online/Logo.png",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Kopar Khairane",
+      "addressLocality": "Navi Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400709",
+      "addressCountry": "IN"
+    },
+    "geo": { "@type": "GeoCoordinates", "latitude": 19.1025, "longitude": 73.0087 },
+    "openingHours": "Mo-Su 07:00-22:00",
+    "priceRange": "₹₹",
+    "areaServed": ["Kopar Khairane", "Vashi", "Nerul", "Belapur", "Kharghar", "Panvel", "Turbhe", "Ghansoli", "Airoli"],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Home Repair Services",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AC Repair & Service" }, "price": "299", "priceCurrency": "INR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Washing Machine Repair" }, "price": "299", "priceCurrency": "INR" },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Carpenter Services" }, "price": "199", "priceCurrency": "INR" }
+      ]
+    },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "200" }
+  }
+  </script>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* ===== HERO ===== */
-    .hero {
-      min-height: 100vh;
-      background: linear-gradient(160deg, var(--primary-dark) 0%, var(--primary) 60%, var(--primary-light) 100%);
-      display: flex;
-      align-items: center;
-      padding: 80px 20px 40px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: -100px; right: -100px;
-      width: 500px; height: 500px;
-      background: radial-gradient(circle, rgba(230,168,23,0.18) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero::after {
-      content: '';
-      position: absolute;
-      bottom: -80px; left: -80px;
-      width: 350px; height: 350px;
-      background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .hero-content { position: relative; z-index: 2; }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(230,168,23,0.2);
-      border: 1px solid rgba(230,168,23,0.4);
-      color: var(--gold-light);
-      padding: 8px 16px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(36px, 9vw, 64px);
-      font-weight: 700;
-      color: var(--white);
-      line-height: 1.1;
-      letter-spacing: 1px;
-      margin-bottom: 16px;
-    }
-
-    .hero h1 .gold { color: var(--gold); }
-
-    .hero-sub {
-      font-family: 'Tiro Devanagari Hindi', serif;
-      font-size: 18px;
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 10px;
-    }
-
-    .hero p {
-      color: rgba(255,255,255,0.8);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 28px;
-      max-width: 480px;
-    }
-
-    .hero-btns {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-      margin-bottom: 36px;
-    }
-
-    .hero-services {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .hero-service-chip {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      background: rgba(255,255,255,0.1);
-      border: 1px solid rgba(255,255,255,0.2);
-      color: rgba(255,255,255,0.85);
-      padding: 8px 14px;
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 500;
-      backdrop-filter: blur(10px);
-    }
-
-    /* ===== SERVICE CARDS ===== */
-    .service-card {
-      background: var(--white);
-      border-radius: var(--radius);
-      overflow: hidden;
-      box-shadow: var(--shadow);
-      border: 1px solid rgba(26,58,143,0.06);
-      transition: var(--transition);
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
-
-    .service-card-img {
-      height: 160px;
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 64px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .service-card-img::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 40px;
-      background: linear-gradient(to top, var(--white), transparent);
-    }
-
-    .service-card-body { padding: 20px; }
-    .service-card-body h3 { font-family: 'Rajdhani', sans-serif; font-size: 20px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .service-card-body p { font-size: 13px; color: var(--text-light); line-height: 1.6; margin-bottom: 14px; }
-
-    .service-card-footer {
-      padding: 14px 20px;
-      background: var(--light-gray);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .service-card-footer .price { font-size: 13px; color: var(--primary); font-weight: 600; }
-    .service-card-footer .arrow { color: var(--primary); font-size: 18px; }
-
-    /* ===== WHY CHOOSE US ===== */
-    .why-card {
-      text-align: center;
-      padding: 28px 20px;
-      background: var(--white);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      border-top: 4px solid var(--primary);
-    }
-
-    .why-card:nth-child(2) { border-top-color: var(--gold); }
-    .why-card:nth-child(3) { border-top-color: var(--success); }
-    .why-card:nth-child(4) { border-top-color: #ef4444; }
-
-    .why-icon { font-size: 40px; margin-bottom: 12px; }
-    .why-card h4 { font-family: 'Rajdhani', sans-serif; font-size: 18px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
-    .why-card p { font-size: 13px; color: var(--text-light); line-height: 1.6; }
-
-    /* ===== CTA SECTION ===== */
-    .cta-section {
-      background: linear-gradient(135deg, var(--primary-dark), var(--primary));
-      padding: 60px 20px;
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-section::before {
-      content: '';
-      position: absolute;
-      top: -50px; right: -50px;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(230,168,23,0.15) 0%, transparent 70%);
-      border-radius: 50%;
-    }
-
-    .cta-section h2 {
-      font-family: 'Rajdhani', sans-serif;
-      font-size: clamp(26px, 5vw, 40px);
-      color: var(--white);
-      font-weight: 700;
-      margin-bottom: 12px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-section p {
-      color: rgba(255,255,255,0.8);
-      margin-bottom: 28px;
-      font-size: 15px;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-btns {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-  </style>
+  <link rel="icon" href="Logo.png" />
 </head>
 <body>
 
-<!-- Page Loader -->
-<div id="page-loader">
-  <div class="loader-logo">SERVI<span>XA</span> HOME</div>
-  <div class="loader-bar"><div class="loader-bar-fill"></div></div>
-</div>
-
-<!-- Top Strip -->
-<div class="contact-strip">
-  <a href="tel:8779694303">📞 8779694303</a>
-  <span>|</span>
-  <a href="mailto:home.servixa@gmail.com">✉️ home.servixa@gmail.com</a>
-  <span>|</span>
-  <span>📍 Kopar Khairane, Navi Mumbai</span>
-</div>
-
-<!-- Navbar -->
-<nav class="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="Logo.png" alt="Servixa Home" onerror="this.style.display='none'" />
-    <div class="nav-logo-text">
-      <span class="brand">SERVIXA HOME</span>
-      <span class="tagline">Navi Mumbai</span>
+<!-- ── NAVBAR ── -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-brand" aria-label="Servixa Home">
+    <img src="Logo.png" alt="Servixa Home Logo" class="nav-logo" width="44" height="44" />
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">SERVIXA HOME</span>
+      <span class="nav-brand-tagline">सेवा • सुरक्षा • समृद्धि</span>
     </div>
   </a>
-  <div class="nav-menu" id="navMenu">
-    <span></span><span></span><span></span>
+  <div class="nav-links" role="menubar">
+    <a href="index.html" role="menuitem">🏠 Home</a>
+    <a href="about.html" role="menuitem">ℹ️ About</a>
+    <a href="services.html" role="menuitem">🛠️ Services</a>
+    <a href="ac-repair.html" role="menuitem">❄️ AC Repair</a>
+    <a href="reviews.html" role="menuitem">⭐ Reviews</a>
+    <a href="contact.html" role="menuitem">📞 Contact</a>
+    <a href="booking.html" class="nav-cta" role="menuitem">📅 Book Now</a>
   </div>
-  <div class="nav-links" id="navLinks">
-    <a href="index.html" class="active"><span class="nav-icon">🏠</span> Home</a>
-    <a href="about.html"><span class="nav-icon">ℹ️</span> About</a>
-    <a href="services.html"><span class="nav-icon">🛠️</span> Services</a>
-    <a href="reviews.html"><span class="nav-icon">⭐</span> Reviews</a>
-    <a href="contact.html"><span class="nav-icon">📞</span> Contact</a>
-    <a href="booking.html" class="nav-cta"><span class="nav-icon">📅</span> Book Now</a>
+  <div class="hamburger" role="button" aria-label="Menu" tabindex="0">
+    <span></span><span></span><span></span>
   </div>
 </nav>
 
-<!-- Hero -->
-<section class="hero">
+<!-- ── HERO ── -->
+<section class="hero" aria-label="Hero section">
+  <div class="hero-bg-pattern">
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+    <div class="hero-circle"></div>
+  </div>
+  <div class="hero-sacred-bg" aria-hidden="true">ॐ</div>
+
   <div class="hero-content">
-    <div class="hero-badge">⚡ Same Day Service Available</div>
-    <h1>Navi Mumbai's<br/>Most Trusted<br/><span class="gold">Home Repair</span><br/>Experts</h1>
-    <p class="hero-sub">सेवा • सुरक्षा • समृद्धि</p>
-    <p>Professional AC repair, washing machine repair & carpenter services at your doorstep. Serving Kopar Khairane & all of Navi Mumbai.</p>
-    <div class="hero-btns">
-      <a href="booking.html" class="btn btn-gold btn-lg">📅 Book Service</a>
-      <a href="tel:8779694303" class="btn btn-white btn-lg">📞 Call Now</a>
+    <div class="hero-text">
+      <div class="hero-badge">
+        <span class="sacred-symbol">卐</span> Navi Mumbai's Most Trusted
+      </div>
+      <h1 class="hero-title">
+        Premium <span class="highlight">Home Repair</span><br/>Experts at Your<br/>Doorstep
+      </h1>
+      <p class="hero-tagline-hindi">
+        <span class="sacred-symbol om-symbol">ॐ</span> &nbsp;सेवा • सुरक्षा • समृद्धि&nbsp; <span class="sacred-symbol">卐</span>
+      </p>
+      <p class="hero-desc">
+        Professional AC repair, washing machine repair &amp; carpenter services in Kopar Khairane &amp; all of Navi Mumbai. Verified technicians. Same day service. Starting ₹299 only.
+      </p>
+      <div class="hero-actions">
+        <a href="booking.html" class="btn btn-primary">📅 Book Service Now</a>
+        <a href="tel:8779694303" class="btn btn-outline">📞 Call 8779694303</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-number" data-target="500" data-suffix="+">0+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-target="3">0</div>
+          <div class="stat-label">Services Offered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number" data-prefix="4." data-target="9" data-suffix="★">4.★</div>
+          <div class="stat-label">Avg. Rating</div>
+        </div>
+      </div>
     </div>
-    <div class="hero-services">
-      <div class="hero-service-chip">❄️ AC Repair</div>
-      <div class="hero-service-chip">🫧 Washing Machine</div>
-      <div class="hero-service-chip">🔨 Carpenter</div>
+
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-img-wrap">
+        <img src="Hero.png" alt="Servixa Home Technician" loading="eager" />
+        <div class="hero-img-overlay"></div>
+      </div>
+      <div class="hero-float-card card1">
+        <span class="card-icon">⚡</span>
+        <div>
+          <div style="font-size:0.75rem;color:#666;">Response Time</div>
+          <div>Same Day Service</div>
+        </div>
+      </div>
+      <div class="hero-float-card card2">
+        <span class="card-icon">🛡️</span>
+        <div>
+          <div style="font-size:0.75rem;color:#666;">Guarantee</div>
+          <div>Service Warranty</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- Stats -->
-<div class="stats-strip">
-  <div class="stat-item">
-    <div class="stat-num" data-target="500" data-suffix="+">0+</div>
-    <div class="stat-label">Happy Customers</div>
+<!-- ── TRUST STRIP ── -->
+<section style="background:var(--white); padding:1.2rem 2rem; border-bottom:1px solid rgba(0,0,0,0.06);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:center;gap:2.5rem;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--text-mid);">✅ Verified Technicians</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--text-mid);">🔒 Service Warranty</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--text-mid);">⚡ Same Day Service</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--text-mid);">💰 Transparent Pricing</div>
+    <div style="display:flex;align-items:center;gap:8px;font-size:0.85rem;font-weight:600;color:var(--text-mid);">📞 7 Days Support</div>
   </div>
-  <div class="stat-item">
-    <div class="stat-num" data-target="3" data-suffix="">0</div>
-    <div class="stat-label">Services Offered</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num" data-target="5" data-suffix="★">0★</div>
-    <div class="stat-label">Average Rating</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num" data-target="24" data-suffix="/7">0/7</div>
-    <div class="stat-label">Support Available</div>
-  </div>
-</div>
+</section>
 
-<!-- Trust Bar -->
-<div class="trust-bar">
-  <div class="trust-item"><span class="icon">✅</span> Verified Technicians</div>
-  <div class="trust-item"><span class="icon">🔒</span> Service Warranty</div>
-  <div class="trust-item"><span class="icon">⚡</span> Same Day Service</div>
-  <div class="trust-item"><span class="icon">💰</span> Transparent Pricing</div>
-</div>
+<!-- ── SERVICES ── -->
+<section class="section" id="services">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Our Expertise</div>
+      <h2 class="section-title">What We <span class="accent">Fix & Build</span></h2>
+      <div class="sacred-divider"><span class="sacred-symbol">卐</span></div>
+      <p class="section-subtitle">Expert technicians for all your home repair & maintenance needs across Navi Mumbai</p>
+    </div>
 
-<!-- Services Section -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-badge">Our Services</span>
-      <h2 class="section-title">What We <span>Fix & Build</span></h2>
-      <div class="divider"></div>
-      <p class="section-subtitle">Expert technicians for all your home repair & maintenance needs</p>
-    </div>
-    <div class="grid-3">
-      <a href="ac-repair.html" class="service-card fade-in">
-        <div class="service-card-img" style="background: linear-gradient(135deg,#1a3a8f,#2550c0)">❄️</div>
-        <div class="service-card-body">
-          <h3>AC Repair & Service</h3>
-          <p>All brands – window, split, inverter. Gas filling, deep cleaning, installation & more.</p>
-          <ul class="feature-list">
-            <li>All Brand AC Repair</li>
-            <li>AC Deep Cleaning</li>
-            <li>Gas Filling / Recharge</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <span class="price">Starting ₹299</span>
-          <span class="arrow">→</span>
-        </div>
-      </a>
-      <a href="washing-machine.html" class="service-card fade-in">
-        <div class="service-card-img" style="background: linear-gradient(135deg,#0f2460,#1a3a8f)">🫧</div>
-        <div class="service-card-body">
-          <h3>Washing Machine Repair</h3>
-          <p>Top load & front load repair. Motor issues, drum problems, leaks & more fixed fast.</p>
-          <ul class="feature-list">
-            <li>Top & Front Load</li>
-            <li>Motor & Drum Repair</li>
-            <li>Water Leakage Fix</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <span class="price">Starting ₹299</span>
-          <span class="arrow">→</span>
-        </div>
-      </a>
-      <a href="carpenter.html" class="service-card fade-in">
-        <div class="service-card-img" style="background: linear-gradient(135deg,#c48a0a,#e6a817)">🔨</div>
-        <div class="service-card-body">
-          <h3>Carpenter Services</h3>
-          <p>Furniture repair, door & window work, custom furniture & all woodwork needs.</p>
-          <ul class="feature-list">
-            <li>Furniture Repair</li>
-            <li>Door & Window Work</li>
-            <li>Custom Furniture</li>
-          </ul>
-        </div>
-        <div class="service-card-footer">
-          <span class="price">Starting ₹199</span>
-          <span class="arrow">→</span>
-        </div>
-      </a>
-    </div>
-    <div style="text-align:center;margin-top:30px" class="fade-in">
-      <a href="services.html" class="btn btn-outline">View All Services →</a>
+    <div class="services-grid">
+      <!-- AC -->
+      <article class="service-card reveal" data-delay="0">
+        <div class="service-card-icon">❄️</div>
+        <h3 class="service-card-title">AC Repair & Service</h3>
+        <p class="service-card-desc">All brands – window, split, inverter. Gas filling, deep cleaning, installation & more fixed fast.</p>
+        <ul class="service-card-list">
+          <li>All Brand AC Repair</li>
+          <li>AC Deep Cleaning</li>
+          <li>Gas Filling / Recharge</li>
+          <li>AC Installation</li>
+          <li>Inverter AC Service</li>
+        </ul>
+        <div class="service-price">Starting ₹299</div>
+        <a href="ac-repair.html" class="service-link">Know More →</a>
+      </article>
+
+      <!-- Washing Machine -->
+      <article class="service-card reveal" data-delay="120">
+        <div class="service-card-icon">🫧</div>
+        <h3 class="service-card-title">Washing Machine Repair</h3>
+        <p class="service-card-desc">Top load & front load repair. Motor issues, drum problems, leaks & more fixed same day.</p>
+        <ul class="service-card-list">
+          <li>Top & Front Load Repair</li>
+          <li>Motor & Drum Repair</li>
+          <li>Water Leakage Fix</li>
+          <li>Spin Cycle Problems</li>
+          <li>All Brand Service</li>
+        </ul>
+        <div class="service-price">Starting ₹299</div>
+        <a href="washing-machine.html" class="service-link">Know More →</a>
+      </article>
+
+      <!-- Carpenter -->
+      <article class="service-card reveal" data-delay="240">
+        <div class="service-card-icon">🔨</div>
+        <h3 class="service-card-title">Carpenter Services</h3>
+        <p class="service-card-desc">Furniture repair, door & window work, custom furniture & all woodwork needs at your home.</p>
+        <ul class="service-card-list">
+          <li>Furniture Repair</li>
+          <li>Door & Window Work</li>
+          <li>Custom Furniture</li>
+          <li>Wardrobe Installation</li>
+          <li>False Ceiling Work</li>
+        </ul>
+        <div class="service-price">Starting ₹199</div>
+        <a href="carpenter.html" class="service-link">Know More →</a>
+      </article>
     </div>
   </div>
 </section>
 
-<!-- Why Choose Us -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-badge">Why Servixa</span>
-      <h2 class="section-title">Why Choose <span>Us?</span></h2>
-      <div class="divider"></div>
+<!-- ── WHY CHOOSE US ── -->
+<section class="section why-section" id="why">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow" style="color:var(--gold-light);">Why Servixa</div>
+      <h2 class="section-title" style="color:var(--white);">Why Choose <span style="color:var(--gold-light);">Us?</span></h2>
+      <div class="sacred-divider"><span class="sacred-symbol">ॐ</span></div>
     </div>
-    <div class="grid-2 grid-4" style="display:grid;grid-template-columns:repeat(2,1fr);gap:16px">
-      <div class="why-card fade-in">
+    <div class="why-grid">
+      <div class="why-card reveal" data-delay="0">
         <div class="why-icon">👨‍🔧</div>
-        <h4>Expert Technicians</h4>
-        <p>Trained & verified professionals with years of experience in home appliance repair.</p>
+        <div class="why-title">Expert Technicians</div>
+        <p class="why-desc">Trained & verified professionals with years of experience in home appliance repair.</p>
       </div>
-      <div class="why-card fade-in">
+      <div class="why-card reveal" data-delay="100">
         <div class="why-icon">⚡</div>
-        <h4>Same Day Service</h4>
-        <p>Book before noon and get same-day service at your doorstep. Fast & reliable.</p>
+        <div class="why-title">Same Day Service</div>
+        <p class="why-desc">Book before noon and get same-day service at your doorstep. Fast & reliable always.</p>
       </div>
-      <div class="why-card fade-in">
+      <div class="why-card reveal" data-delay="200">
         <div class="why-icon">💰</div>
-        <h4>Fair Pricing</h4>
-        <p>No hidden charges. Transparent pricing with free inspection on every visit.</p>
+        <div class="why-title">Fair Pricing</div>
+        <p class="why-desc">No hidden charges. Transparent pricing with free inspection on every service visit.</p>
       </div>
-      <div class="why-card fade-in">
+      <div class="why-card reveal" data-delay="300">
         <div class="why-icon">🛡️</div>
-        <h4>Service Warranty</h4>
-        <p>All repairs come with a service warranty for your peace of mind.</p>
+        <div class="why-title">Service Warranty</div>
+        <p class="why-desc">All repairs come with service warranty for your complete peace of mind.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- How It Works -->
-<section class="section">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-badge">Process</span>
-      <h2 class="section-title">How It <span>Works</span></h2>
-      <div class="divider"></div>
+<!-- ── HOW IT WORKS ── -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Simple Process</div>
+      <h2 class="section-title">How It <span class="accent">Works</span></h2>
+      <div class="sacred-divider"><span class="sacred-symbol">卐</span></div>
     </div>
-    <div class="process-steps">
-      <div class="process-step fade-in">
-        <div class="step-num">1</div>
-        <div class="step-content">
-          <h4>📅 Book a Service</h4>
-          <p>Call us, WhatsApp, or fill the online booking form with your service details & preferred time.</p>
-        </div>
+    <div class="process-grid">
+      <div class="process-step reveal" data-delay="0">
+        <div class="step-number">1</div>
+        <div class="step-icon">📅</div>
+        <h3 class="step-title">Book a Service</h3>
+        <p class="step-desc">Call, WhatsApp or fill the booking form with service details & preferred time.</p>
       </div>
-      <div class="process-step fade-in">
-        <div class="step-num">2</div>
-        <div class="step-content">
-          <h4>✅ Confirm Appointment</h4>
-          <p>We confirm your booking via call/WhatsApp and assign the best technician near you.</p>
-        </div>
+      <div class="process-step reveal" data-delay="150">
+        <div class="step-number">2</div>
+        <div class="step-icon">✅</div>
+        <h3 class="step-title">Confirm Appointment</h3>
+        <p class="step-desc">We confirm your booking via call/WhatsApp and assign the best technician.</p>
       </div>
-      <div class="process-step fade-in">
-        <div class="step-num">3</div>
-        <div class="step-content">
-          <h4>👨‍🔧 Technician Arrives</h4>
-          <p>Our expert technician arrives on time with all necessary tools & spare parts.</p>
-        </div>
+      <div class="process-step reveal" data-delay="300">
+        <div class="step-number">3</div>
+        <div class="step-icon">👨‍🔧</div>
+        <h3 class="step-title">Technician Arrives</h3>
+        <p class="step-desc">Our expert arrives on time with all necessary tools & spare parts.</p>
       </div>
-      <div class="process-step fade-in">
-        <div class="step-num">4</div>
-        <div class="step-content">
-          <h4>🎉 Problem Solved</h4>
-          <p>Service is done professionally. Pay only after you're 100% satisfied with the work.</p>
-        </div>
+      <div class="process-step reveal" data-delay="450">
+        <div class="step-number">4</div>
+        <div class="step-icon">🎉</div>
+        <h3 class="step-title">Problem Solved</h3>
+        <p class="step-desc">Pay only after you are 100% satisfied with the professional work done.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- Reviews Preview -->
-<section class="section section-alt">
-  <div class="container">
-    <div class="section-header fade-in">
-      <span class="section-badge">Reviews</span>
-      <h2 class="section-title">What Customers <span>Say</span></h2>
-      <div class="divider"></div>
+<!-- ── REVIEWS ── -->
+<section class="section" style="background:var(--gray-100);" id="reviews">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Customer Love</div>
+      <h2 class="section-title">What Customers <span class="accent">Say</span></h2>
+      <div class="sacred-divider"><span class="sacred-symbol">ॐ</span></div>
     </div>
-    <div class="grid-3">
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">AC was not cooling at all. Servixa Home technician came within 2 hours and fixed it perfectly. Great service and very affordable!</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">R</div>
+    <div class="reviews-grid">
+      <div class="review-card reveal" data-delay="0">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">AC was not cooling at all. Servixa Home technician came within 2 hours and fixed it perfectly. Great service and very affordable pricing!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">R</div>
           <div>
-            <div class="testimonial-name">Rahul Sharma</div>
-            <div class="testimonial-location">📍 Kopar Khairane</div>
+            <div class="reviewer-name">Rahul Sharma</div>
+            <div class="reviewer-loc">📍 Kopar Khairane</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">My washing machine was leaking. They diagnosed it correctly and repaired it same day. Very professional team. Highly recommended!</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">P</div>
+      <div class="review-card reveal" data-delay="100">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">My washing machine was leaking. They diagnosed it correctly and repaired it same day. Very professional team. Highly recommended!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">P</div>
           <div>
-            <div class="testimonial-name">Priya Nair</div>
-            <div class="testimonial-location">📍 Vashi, Navi Mumbai</div>
+            <div class="reviewer-name">Priya Nair</div>
+            <div class="reviewer-loc">📍 Vashi, Navi Mumbai</div>
           </div>
         </div>
       </div>
-      <div class="testimonial-card fade-in">
-        <div class="testimonial-stars">★★★★★</div>
-        <p class="testimonial-text">Got my wardrobe repaired and new shelves installed. Excellent carpenter work. Clean, fast and honest pricing. Will call again!</p>
-        <div class="testimonial-author">
-          <div class="testimonial-avatar">A</div>
+      <div class="review-card reveal" data-delay="200">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">Got my wardrobe repaired and new shelves installed. Excellent carpenter work. Clean, fast and honest pricing. Will definitely call again!</p>
+        <div class="reviewer">
+          <div class="reviewer-avatar">A</div>
           <div>
-            <div class="testimonial-name">Anita Patil</div>
-            <div class="testimonial-location">📍 Nerul, Navi Mumbai</div>
+            <div class="reviewer-name">Anita Patil</div>
+            <div class="reviewer-loc">📍 Nerul, Navi Mumbai</div>
           </div>
         </div>
       </div>
     </div>
-    <div style="text-align:center;margin-top:28px" class="fade-in">
-      <a href="reviews.html" class="btn btn-outline">Read All Reviews →</a>
+    <div style="text-align:center;margin-top:2rem;">
+      <a href="reviews.html" class="btn btn-primary">View All Reviews ⭐</a>
     </div>
   </div>
 </section>
 
-<!-- CTA -->
-<section class="cta-section">
-  <h2>Ready to Get Your Appliance Fixed?</h2>
-  <p>Book a service now or call us directly. Same day service available!</p>
-  <div class="cta-btns">
-    <a href="booking.html" class="btn btn-gold btn-lg">📅 Book Online</a>
-    <a href="tel:8779694303" class="btn btn-white btn-lg">📞 8779694303</a>
-    <a href="https://wa.me/918779694303?text=Hi! I need a home service." target="_blank" class="btn btn-lg" style="background:#25D366;color:#fff;">💬 WhatsApp</a>
+<!-- ── AREAS ── -->
+<section class="section" id="areas">
+  <div class="section-inner">
+    <div class="section-header reveal">
+      <div class="section-eyebrow">Service Coverage</div>
+      <h2 class="section-title">Areas We <span class="accent">Serve</span></h2>
+    </div>
+    <div class="area-badges reveal">
+      <span class="area-badge">📍 Kopar Khairane</span>
+      <span class="area-badge">📍 Vashi</span>
+      <span class="area-badge">📍 Nerul</span>
+      <span class="area-badge">📍 Belapur</span>
+      <span class="area-badge">📍 Kharghar</span>
+      <span class="area-badge">📍 Panvel</span>
+      <span class="area-badge">📍 Turbhe</span>
+      <span class="area-badge">📍 Ghansoli</span>
+      <span class="area-badge">📍 Airoli</span>
+      <span class="area-badge">📍 Sanpada</span>
+      <span class="area-badge">📍 Juinagar</span>
+      <span class="area-badge">📍 Rabale</span>
+    </div>
   </div>
 </section>
 
-<!-- Footer -->
+<!-- ── CTA ── -->
+<section style="padding:3rem 0;">
+  <div class="cta-banner reveal">
+    <h2 class="cta-banner-title">Ready to Get Your Appliance Fixed?</h2>
+    <p class="cta-banner-desc">Book a service now or call us directly. Same day service available across Navi Mumbai!</p>
+    <div class="cta-actions">
+      <a href="booking.html" class="btn btn-gold">📅 Book Online</a>
+      <a href="tel:8779694303" class="btn btn-outline" style="border-color:rgba(255,255,255,0.4);">📞 8779694303</a>
+      <a href="https://wa.me/918779694303?text=Hi! I need a home service." class="btn" style="background:#25D366;color:white;">💬 WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
 <footer>
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <img src="Logo.png" alt="Servixa Home" onerror="this.style.display='none'" />
-      <h3>SERVIXA HOME</h3>
-      <p class="hindi-tagline">सेवा • सुरक्षा • समृद्धि</p>
-      <p>Your trusted partner for AC repair, washing machine repair, and carpenter services in Navi Mumbai.</p>
+  <div class="footer-grid">
+    <div>
+      <img src="Logo.png" alt="Servixa Home" class="footer-brand-logo" width="50" height="50" loading="lazy" />
+      <div class="footer-brand-name">SERVIXA HOME</div>
+      <div class="footer-tagline">
+        <span class="sacred-symbol">卐</span> सेवा • सुरक्षा • समृद्धि <span class="sacred-symbol">ॐ</span>
+      </div>
+      <p class="footer-desc">Your trusted partner for AC repair, washing machine repair, and carpenter services in Navi Mumbai. Verified technicians. Same day service.</p>
+      <div class="footer-social">
+        <a href="https://wa.me/918779694303" class="social-btn" aria-label="WhatsApp">💬</a>
+        <a href="tel:8779694303" class="social-btn" aria-label="Call">📞</a>
+        <a href="mailto:home.servixa@gmail.com" class="social-btn" aria-label="Email">✉️</a>
+      </div>
     </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <ul>
+    <div>
+      <div class="footer-heading">Services</div>
+      <ul class="footer-links">
         <li><a href="ac-repair.html">❄️ AC Repair & Service</a></li>
         <li><a href="washing-machine.html">🫧 Washing Machine Repair</a></li>
         <li><a href="carpenter.html">🔨 Carpenter Services</a></li>
         <li><a href="booking.html">📅 Book a Service</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Quick Links</h4>
-      <ul>
+    <div>
+      <div class="footer-heading">Quick Links</div>
+      <ul class="footer-links">
         <li><a href="index.html">🏠 Home</a></li>
         <li><a href="about.html">ℹ️ About Us</a></li>
         <li><a href="services.html">🛠️ All Services</a></li>
@@ -534,37 +408,28 @@
         <li><a href="contact.html">📞 Contact Us</a></li>
       </ul>
     </div>
-    <div class="footer-col">
-      <h4>Contact</h4>
+    <div>
+      <div class="footer-heading">Contact</div>
       <div class="footer-contact-item">
         <span class="icon">📞</span>
-        <div><a href="tel:8779694303">8779694303</a></div>
+        <div class="text"><a href="tel:8779694303">8779694303</a></div>
       </div>
       <div class="footer-contact-item">
         <span class="icon">✉️</span>
-        <div><a href="mailto:home.servixa@gmail.com">home.servixa@gmail.com</a></div>
+        <div class="text"><a href="mailto:home.servixa@gmail.com">home.servixa@gmail.com</a></div>
       </div>
       <div class="footer-contact-item">
         <span class="icon">📍</span>
-        <div>Kopar Khairane, Navi Mumbai, Maharashtra</div>
+        <div class="text">Kopar Khairane, Navi Mumbai, Maharashtra</div>
       </div>
       <div class="footer-contact-item">
-        <span class="icon">🌐</span>
-        <div><a href="https://servixahome.online" target="_blank">servixahome.online</a></div>
+        <span class="icon">⏰</span>
+        <div class="text">Mon – Sun: 7:00 AM – 10:00 PM</div>
       </div>
     </div>
   </div>
-  <div class="container footer-bottom">
-    <span>© 2025 Servixa Home. All Rights Reserved.</span>
-    <span>Made with ❤️ in Navi Mumbai</span>
-  </div>
-</footer>
-
-<!-- Floating Buttons -->
-<a href="https://wa.me/918779694303?text=Hi! I need a home service." target="_blank" class="whatsapp-float">💬</a>
-<a href="tel:8779694303" class="call-float">📞</a>
-<div class="back-top back-top">↑</div>
-
-<script src="script.js"></script>
-</body>
-      </html>
+  <div class="footer-bottom">
+    <div class="footer-bottom-text">© 2025 Servixa Home. All Rights Reserved. Made with ❤️ in Navi Mumbai</div>
+    <div class="footer-symbols">
+      <span class="sacred-symbol">卐</span>
+      <span class="sacred-symbol om-symb
