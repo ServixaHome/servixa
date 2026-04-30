@@ -103,23 +103,24 @@ if (bookingForm) {
     const msg = `🔧 *New Booking - Servixa Home*\n\n👤 *Name:* ${name}\n📞 *Phone:* ${phone}\n🛠️ *Service:* ${service}\n📅 *Date:* ${date}\n⏰ *Time:* ${time}\n📍 *Address:* ${address}\n📝 *Notes:* ${notes || 'None'}`;
     
     setTimeout(() => {
+      // Open WhatsApp
+      window.open(`https://wa.me/918779694303?text=${encodeURIComponent(msg)}`, '_blank');
+
       // Show success
       const successDiv = document.getElementById('bookingSuccess');
       if (successDiv) {
         successDiv.style.display = 'flex';
         bookingForm.style.display = 'none';
-      } else {
-        // Open WhatsApp
-        window.open(`https://wa.me/918779694303?text=${encodeURIComponent(msg)}`, '_blank');
-        btn.innerHTML = '✅ Booking Sent!';
-        btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
-        setTimeout(() => {
-          btn.innerHTML = originalText;
-          btn.disabled = false;
-          btn.style.background = '';
-          bookingForm.reset();
-        }, 3000);
       }
+      
+      btn.innerHTML = '✅ Booking Sent!';
+      btn.style.background = 'linear-gradient(135deg, #22c55e, #16a34a)';
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+        btn.style.background = '';
+        bookingForm.reset();
+      }, 3000);
     }, 1500);
   });
 }
