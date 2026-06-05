@@ -6,16 +6,7 @@
   <title>Customer Reviews – Servixa Home</title>
   <link rel="icon" type="image/png" href="Logo.png" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    .rating-summary { background: var(--navy); border-radius: var(--radius-lg); padding: 40px; text-align: center; color: white; max-width: 420px; margin: 0 auto 60px; }
-    .rating-big { font-family: 'Playfair Display', serif; font-size: 5rem; font-weight: 800; color: var(--gold); line-height: 1; }
-    .rating-stars-big { font-size: 2rem; color: var(--gold); letter-spacing: 4px; margin: 8px 0; }
-    .rating-count { color: rgba(255,255,255,0.5); font-size: 0.875rem; }
-    .filter-bar { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 32px; }
-    .filter-btn { padding: 8px 20px; border-radius: 50px; border: 1.5px solid rgba(15,45,92,0.15); background: transparent; color: var(--text-mid); font-family: 'DM Sans', sans-serif; font-size: 0.85rem; font-weight: 600; cursor: pointer; transition: var(--transition); }
-    .filter-btn.active, .filter-btn:hover { background: var(--navy); color: white; border-color: var(--navy); }
-    .google-badge { display: inline-flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(15,45,92,0.1); padding: 8px 16px; border-radius: 50px; font-size: 0.8rem; font-weight: 600; color: var(--text-mid); margin-bottom: 40px; }
-  </style>
+
 </head>
 <body>
 <nav class="navbar">
@@ -158,12 +149,21 @@
       <div class="footer-brand"><img src="Logo.png" alt="Servixa Home" /><p>Navi Mumbai's trusted appliance repair service.</p><p class="hindi-footer">सेवा • सुरक्षा • समृद्धि</p></div>
       <div class="footer-col"><h4>Services</h4><ul><li><a href="ac-repair.html">AC Repair</a></li><li><a href="washing-machine.html">WM Repair</a></li><li><a href="services.html">All Services</a></li></ul></div>
       <div class="footer-col"><h4>Company</h4><ul><li><a href="about.html">About</a></li><li><a href="reviews.html">Reviews</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:+919876543210">📞 +91 98765 43210</a></li><li><a href="https://wa.me/919876543210">💬 WhatsApp</a></li></ul></div>
+      <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:8779694303">📞 8779694303</a></li><li><a href="https://wa.me/918779694303?text=Hi! I need a home service.">💬 WhatsApp</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>© 2025 Servixa Home. All rights reserved.</span><span>Made with ❤️ in Navi Mumbai</span></div>
   </div>
 </footer>
-<a href="https://wa.me/919876543210" class="whatsapp-float" target="_blank">💬</a>
+<a href="https://wa.me/918779694303?text=Hi! I need a home service." class="whatsapp-float" target="_blank">💬</a>
+<a href="tel:8779694303" class="call-float">📞</a>
+<div class="back-top">↑</div>
+
+<!-- Mobile Sticky CTA Bar -->
+<div class="mobile-sticky-cta">
+  <a href="tel:8779694303" class="cta-call">📞 Call Now</a>
+  <a href="https://wa.me/918779694303?text=Hi! I need a home service." target="_blank" class="cta-wa">💬 WhatsApp</a>
+</div>
+
 <script src="script.js"></script>
 <script>
 function filterReviews(category, btn) {
